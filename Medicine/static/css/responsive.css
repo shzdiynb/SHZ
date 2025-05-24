@@ -1,0 +1,312 @@
+/*--------------------- Responsive (Start) ---------------------*/
+@media (max-width: 991px) {
+
+    html {
+        font-size: 55%;
+    }
+ 
+    .header .navbar {
+        display: none;
+    }
+
+    .header #menu-btn {
+        display: initial;
+    }
+
+    .header .icon-container .btn {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 10000;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: var(--black);
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        box-shadow: var(--box-shadow);
+        border-top: 0.2rem solid var(--main-color);
+        border-bottom: 0.2rem solid var(--main-color);
+        padding: 2rem;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .mobile-menu.active {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .mobile-navbar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .mobile-navbar .nav-link {
+        background: var(--main-color);
+        overflow: hidden;
+    }
+
+    .mobile-navbar .main-nav-link {
+        color: var(--white);
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        padding: 1.5rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .mobile-navbar .main-nav-link a {
+        color: var(--white);
+    }
+
+    .mobile-navbar .sub-nav-link {
+        background-color: var(--white);
+        padding: 1rem 0;
+        padding-left: 4rem;
+        display: none;
+        -webkit-transition: all 0s;
+        transition: all 0s;
+    }
+
+    .mobile-navbar .sub-nav-link a {
+        color: var(--grey);
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+        display: block;
+        padding: 1rem 0rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .mobile-navbar .sub-nav-link a:hover {
+        color: var(--main-color);
+    }
+
+    .mobile-menu::-webkit-scrollbar {
+        width: 0.8rem;
+    }
+
+    .mobile-menu::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: var(--main-color);
+    }
+
+    .mobile-menu::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .blog.grid,
+    .blog.list {
+        -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    }
+
+    .shop {
+        -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    }
+
+    .contact .contact-info .info-item {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 15rem;
+        flex: 1 1 15rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 3rem 2rem;
+    }
+
+    .header .header-1 {
+        padding: 0.5rem 2rem;
+    }
+
+    .header .header-2 {
+        padding: 0rem 2rem;
+    }
+
+    .footer .box-container {
+        padding: 2rem;
+    }
+
+    .search-container {
+        right: 1rem;
+    }
+
+    .home-item{
+        height: 75rem;
+    }
+
+    .home-item .content{ 
+        padding: 10rem 2rem;
+    }
+
+    .home-slider .swiper-button-next,
+    .home-slider .swiper-button-prev{
+        display: none;
+    }
+
+    .gallery .box-container {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'gallery-1 gallery-2'
+            'gallery-3 gallery-3'
+            'gallery-4 gallery-5'
+            'gallery-6 gallery-6'
+            'gallery-7 gallery-8'
+            'gallery-9 gallery-9';
+    }
+
+    .project-item {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .header .header-1 {
+        justify-content: flex-end;
+    }
+
+    .header .header-2 {
+        padding: 0rem 1rem;
+    }
+
+    .header .header-contacts {
+        display: none;
+    }
+
+    .footer .box-container {
+        padding: 2rem 1rem;
+    }
+
+    .home-item{
+        height: 100vh;
+    }
+
+    .form .input-box,
+    .dark-form .input-box {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .dark-form .input-box .input-field,
+    .dark-form .select {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 25rem;
+        flex: 1 1 25rem;
+    }
+
+    .account-form {
+        max-width: 100%;
+    }
+
+    .gallery .box-container {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'gallery-1'
+            'gallery-2'
+            'gallery-3'
+            'gallery-4'
+            'gallery-5'
+            'gallery-6'
+            'gallery-7'
+            'gallery-8'
+            'gallery-9'
+            'gallery-10'
+            'gallery-11'
+            'gallery-12';
+    }
+
+    .project-item {
+        width: 100%;
+    }
+
+    .position-item {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .shop .product-container.list .product-item {
+        gap: 0rem;
+    }
+
+    .shop .product-container.list .product-item .image {
+        width: 30rem;
+    }
+
+    .shop .product-container.list .product-item .content {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .shop .product-container.list .product-item .content p {
+        line-height: 1.5;
+    }
+
+    .product-info .leave-reply {
+        width: 100%;
+    }
+
+    .cart .cart-summary {
+        width: 100%;
+    }
+
+    .contact-form .input-box {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .contact-form .input-box {
+        gap: 0;
+    }
+
+    .skills-section .content,
+    .request-quote .content {
+        padding: 4rem 5%;
+        -webkit-clip-path: none;
+        clip-path: none;
+    }
+
+    .contact-container {
+        padding: 2rem;
+    }
+
+}
+
+/*--------------------- Responsive (End) ---------------------*/

@@ -1,0 +1,5365 @@
+/* Table of Contents
+----------------------------------
+ 
+  
+/*------------------------------ (00)-Global CSS ------------------------------*/
+/*   
+0- Global CSS 
+1- Heading CSS  
+2- Button CSS  
+3- Logo Area CSS
+4- Page Title CSS 
+5- Header Area CSS 
+6- Footer Area CSS
+7- Scroll-Top Area CSS
+8- Form CSS
+9- Dark Form CSS
+10- Swiper Pagination CSS
+11- Swiper Navigation CSS
+12- Sidebar Heading CSS
+13- Sidebar CSS
+*/
+
+/*------------------------------ (01)-Home ------------------------------*/
+/*
+1- Home Slider
+2- Counter
+3- Service Slider
+4- Skills
+5- Banner
+6- Testimonials
+7- Blogs
+8- Newsletter
+9- Partners
+*/
+
+/*------------------------------ (02)-About ------------------------------*/
+/*
+1- About Us
+2- Team
+3- Team Single
+4- Testimonials
+5- Faqs
+*/
+
+/*------------------------------ (03)-Pages ------------------------------*/
+
+/*--------------- COMPONENTS ---------------*/
+/* 
+01- Account-Form 
+02- Tab Information
+03- Page Single
+04- Page Sidebar  
+*/
+
+/*--------------- PAGES ---------------*/
+/*
+1- Gallery
+2- Process
+3- Pricing
+4- Request Quote
+5- Partners
+6- Career
+7- Career Single
+8- Login
+9- Register
+*/
+
+/*------------------------------ (04)-Service ------------------------------*/
+/*
+1- Services
+2- Service Single
+
+/*------------------------------ (05)-Project ------------------------------*/
+/*
+1- Projects
+2- Project Single
+*/
+
+/*------------------------------ (06)-Blog ------------------------------*/
+
+/*--------------- COMPONENTS ---------------*/
+/* 
+01- Blog-Item 
+02- Comment 
+03- Pages-No
+*/
+
+/*--------------- PAGES ---------------*/
+/*
+1- Blog Grid
+2- Blog List
+3- Blog Single 
+*/
+
+
+/*------------------------------ (07)-Shop ------------------------------*/
+
+/*--------------- COMPONENTS ---------------*/
+/* 
+01- Filter
+02- Shop Header
+03- Quantity Box
+04- Product-Item
+05- Shop-Title
+06- Cart-Summary
+*/
+
+/*--------------- PAGES ---------------*/
+/*
+1- Shop Grid 
+2- Shop Standard
+3- Product Single
+4- Wishlist
+5- Cart
+6- Checkout
+*/
+
+/*------------------------------ (08)-Contact ------------------------------*/
+
+ 
+
+/*------------------------------ (00)- Global CSS (Start) ------------------------------*/
+
+/*----- 0- Global CSS -----*/
+@import url('css2-Rubikwght300400500600700800900_swap.css');
+@import url('css2-Freeman_swap.css');
+
+:root {
+    --main-color: #3498DB;
+    --secondary-color: #111111;
+    --auxiliary-color: #0b63ac;
+    --black: #000;
+    --white: #fff;
+    --light-grey: #E6E6E6;
+    --grey: #666;
+    --custom-bg-color: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --clip-path-1: polygon(10% 0, 100% 0, 100% 81%, 86% 100%, 0 100%, 0% 60%, 0 20%);
+    --clip-path-2: polygon(25% 0, 100% 0, 100% 78%, 78% 100%, 0 100%, 0% 60%, 0 24%);
+    --font-family: "Freeman", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn {
+    font-family: var(--font-family);
+    letter-spacing: 1px;
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+}
+
+*:not(.project-item){
+    -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+}
+
+*::-moz-selection {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+*::selection {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+body {
+    background: #f1f9fd;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+section {
+    padding: 3rem 5%;
+}
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p{
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--grey);
+}
+
+/*----- 1- Heading CSS -----*/
+.heading {
+    padding-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.heading span {
+    letter-spacing: 0.2rem;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.heading h2 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    letter-spacing: 0.1rem;
+    line-height: 1;
+    position: relative;
+    padding-top: 0.5rem;
+}
+
+.linear-bg .heading h2 {
+    color: var(--white);
+}
+
+/*----- 2- Button CSS -----*/
+.btn {
+    display: inline-block;
+    font-size: 1.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white);
+    cursor: pointer;
+    padding: 1.3rem 2rem;
+    background-color: var(--main-color);
+    -webkit-clip-path: var(--clip-path-1);
+            clip-path: var(--clip-path-1);
+}
+
+.btn:hover {
+    background-color: var(--auxiliary-color);
+    color: var(--white);
+}
+
+/*----- 3- Logo Area CSS -----*/
+.logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img{
+    height: 4.5rem;
+    width: auto;
+}
+
+.logo h3 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1;
+}
+
+/*----- 4- Page Title CSS -----*/
+.page-title {
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url("../image/pageTitle.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url("../image/pageTitle.jpg");
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url("../image/pageTitle.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0rem 5%;
+    padding-top: 8rem;
+    min-height: 40rem;
+}
+
+.page-title .title h2 {
+    color: var(--white);
+    font-size: 5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.page-title .link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+}
+
+.page-title .link a {
+    font-weight: 600;
+    color: var(--white);
+}
+
+.page-title .link a:hover {
+    color: var(--main-color);
+}
+
+.page-title .link i {
+    color: var(--white);
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+}
+
+.page-title .link span {
+    font-weight: 500;
+    color: var(--white);
+}
+
+/*----- 5- Header Area CSS -----*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+}
+
+.header .header-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 5%;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
+}
+
+.header.active .header-1 {
+    display: none;
+}
+
+.header .header-contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 3rem;
+    list-style-type: none;
+}
+
+.header .header-contacts li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.6rem;
+    color: var(--white);
+}
+
+.header .header-contacts li i {
+    color: var(--main-color);
+}
+
+.header .header-contacts span {
+    text-transform: none;
+}
+
+.header .social-contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.header .social-contacts li a {
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.6rem;
+    color: var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header .social-contacts li a:hover {
+    color: var(--main-color);
+}
+
+.header .header-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 7rem;
+    background-color: transparent;
+    padding: 0rem 5%;
+}
+
+.header.active .header-2 {
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.header #menu-btn {
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+    display: none;
+}
+
+.header #menu-btn:hover {
+    color: var(--main-color);
+}
+
+.header .navbar {
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    gap: 1.8rem;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.header .container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header .dropdown-menu {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header .navbar .nav-btn {
+    display: inline-block;
+    font-size: 1.7rem;
+    color: var(--white);
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: none;
+    gap: 0.5rem;
+}
+
+.header .navbar .nav-btn:hover {
+    color: var(--main-color);
+}
+
+.header .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    width: 20rem;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: none;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.header .dropdown-menu:hover button {
+    color: var(--main-color);
+}
+
+.header .dropdown-menu:hover .dropdown-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.header .dropdown-content a {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.header .dropdown-content a:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+.header .icon-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header .icon-container .icon {
+    font-size: 2rem;
+    color: var(--white);
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.header .icon-container .icon:hover {
+    color: var(--main-color);
+}
+
+.header .search-container {
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 2rem;
+    background: var(--white);
+    width: 40rem;
+    padding: 1.5rem 2rem;
+    border-radius: 50rem;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    opacity: 0;
+    -webkit-transform: translateX(300%);
+    transform: translateX(300%);
+    -webkit-transform-origin: right;
+    transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+}
+
+.header .search-container.active {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.header .search-container input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: var(--black);
+    font-size: 1.8rem;
+    text-transform: none;
+}
+
+.header .search-container button {
+    color: var(--secondary-color);
+    background-color: transparent;
+    font-size: 2rem;
+    padding-right: 0.5rem;
+    padding-left: 1rem;
+}
+
+.header .search-container button:hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/*----- 6- Footer Area CSS -----*/
+.footer {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../image/Footer.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../image/Footer.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.footer .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+    padding: 2rem 5%;
+}
+
+.footer-item h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-left: 0.3rem solid var(--main-color);
+    margin-bottom: 2rem;
+}
+
+.footer-item>p {
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.footer-item p {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.footer-item .connect {
+    margin-top: 1rem;
+}
+
+.footer-item .connect p {
+    margin-bottom: 0.9rem !important;
+}
+
+.footer-item .connect i {
+    font-size: 1.6rem;
+    color: var(--main-color);
+    height: 3rem;
+    width: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.footer-item .gmail {
+    text-transform: none;
+}
+
+.footer-item .social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.footer-item .social a {
+    height: 4rem;
+    width: 4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--main-color);
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.footer-item .social a i {
+    color: var(--white);
+    font-size: 1.7rem;
+}
+
+.footer-item .social a:hover {
+    background-color: var(--white);
+}
+
+.footer-item .social a:hover i {
+    color: var(--main-color);
+}
+
+.footer-item .info p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-item .info a {
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.footer-item .links p:hover a {
+    color: var(--main-color);
+}
+
+.footer-item .links p i {
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+.footer-item:last-child p {
+    padding-top: 0rem;
+    padding-bottom: 2rem;
+}
+
+.footer-item .input-field {
+    margin-bottom: 1rem;
+}
+
+.footer .content {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--main-color);
+}
+
+.footer .content p {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+/*----- 7- Scroll-Top Area CSS -----*/
+.scroll-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 2rem;
+    color: var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: var(--main-color);
+    z-index: 900;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-clip-path: var(--clip-path-2);
+            clip-path: var(--clip-path-2);
+}
+
+.scroll-top:hover{
+    background-color: var(--black);
+}
+
+/*----- 8- Form CSS -----*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    color: var(--black) !important;
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.form .input-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form .box {
+    width: 100%;
+    background-color: transparent;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem 1.5rem;
+    border: 0.15rem solid rgba(0, 0, 0, 0.1);
+    text-transform: none;
+    margin-bottom: 1rem;
+}
+
+.form .box::-webkit-input-placeholder {
+    text-transform: capitalize;
+}
+
+.form .box::-moz-placeholder {
+    text-transform: capitalize;
+}
+
+.form .box:-ms-input-placeholder {
+    text-transform: capitalize;
+}
+
+.form .box::placeholder {
+    text-transform: capitalize;
+}
+
+.form .box:focus {
+    border-color: var(--main-color);
+}
+
+.form textarea {
+    resize: none;
+    height: 20rem;
+}
+
+.form .btn {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+/*----- 9- Dark Form CSS -----*/
+.dark-form input:-webkit-autofill,
+.dark-form input:-webkit-autofill:hover,
+.dark-form input:-webkit-autofill:focus,
+.dark-form input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--white);
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.dark-form .input-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dark-form .input-field {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 20rem;
+        flex: 1 1 20rem;
+    border-bottom: 1px solid var(--light-grey);
+    padding: 1.5rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dark-form .input-field:hover {
+    border-color: var(--main-color);
+}
+
+.dark-form .input-field label {
+    color: var(--main-color);
+    font-size: 1.6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.dark-form .box {
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--white);
+    background-color: transparent;
+    text-transform: none;
+}
+
+.dark-form .box::-webkit-input-placeholder {
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.dark-form .box::-moz-placeholder {
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.dark-form .box:-ms-input-placeholder {
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.dark-form .box::placeholder {
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.dark-form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.dark-form .text-area {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.dark-form .select option {
+    color: var(--grey);
+}
+
+.dark-form .select {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 20rem;
+    flex: 1 1 20rem;
+    border-bottom: 0.1rem solid var(--white);
+    width: 100%;
+}
+
+.dark-form .select-container {
+    height: 100%;
+    min-width: 100%;
+    position: relative;
+}
+
+.dark-form .select-box {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    color: var(--white);
+    background-color: transparent;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    padding-left: 4.5rem;
+}
+
+.dark-form .select-container label {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 1.5rem;
+    color: var(--main-color);
+    font-size: 1.6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.dark-form .select-container .icon-container {
+    width: 4rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.dark-form .select-container .icon-container i {
+    font-size: 1.6rem;
+    color: var(--white);
+}
+
+/*----- 10- Swiper Pagination CSS -----*/
+.swiper-pagination-bullet {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 0;
+    background: var(--white);
+    opacity: 0.7;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.swiper-pagination-bullet-active {
+    width: 4rem;
+    background: var(--main-color) !important;
+    opacity: 0.9;
+}
+
+/*----- 11- Swiper Navigation CSS -----*/
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: var(--main-color);
+    font-size: 1rem;
+    height: 5rem;
+    width: 5rem;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: var(--auxiliary-color);
+}
+
+/*----- 12- Sidebar Heading CSS -----*/
+.sidebar-heading h2 {
+    position: relative;
+    font-size: 3rem;
+    font-weight: 600;
+    word-spacing: 1px;
+    color: var(--black);
+    letter-spacing: 0.1rem;
+    line-height: 1;
+    padding: 0.5rem 0;
+    padding-left: 1rem;
+    border-left: 0.3rem solid var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+/*----- 13- Sidebar CSS -----*/
+/*
+1- Search
+2- Category
+3- Recent Items
+4- Tags
+*/
+
+.sidebar {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 28rem;
+        flex: 1 1 28rem;
+}
+
+.sidebar .sidebar-item {
+    margin-bottom: 1.5rem;
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    overflow: hidden;
+    padding: 1.5rem;
+}
+
+/*-- 1- Search --*/
+.sidebar .search .input-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+}
+
+.sidebar .search .input-box input {
+    width: 100%;
+    padding: 1.5rem;
+    overflow: hidden;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .search .input-box input:focus {
+    border-color: var(--main-color);
+}
+
+.sidebar .search .input-box button {
+    color: var(--black);
+    background-color: var(--white);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.sidebar .search .input-box button:hover {
+    border-color: var(--main-color);
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+/*-- 2- Category --*/
+.sidebar .category a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0rem;
+}
+
+.sidebar .category a:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar .category a span {
+    font-size: 1.7rem;
+    color: var(--grey);
+    font-weight: 400;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sidebar .category a span i {
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+
+.sidebar .category a:hover span,
+.sidebar .category a:hover p {
+    color: var(--main-color);
+}
+
+/*-- 3- Post Items --*/
+.sidebar .post-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar .post-item:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar .post-item img {
+    height: 8rem;
+    width: 8rem;
+}
+
+.sidebar .recent-posts .post-item img {
+    width: 10rem;
+}
+
+.sidebar .post-item a {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.sidebar .recent-posts .post-item a {
+    font-size: 1.8rem;
+}
+
+.sidebar .post-item a:hover {
+    color: var(--main-color);
+}
+
+.sidebar .post-item .price {
+    padding-top: 0.5rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.sidebar .post-item .price span {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--grey);
+    text-decoration: line-through;
+    padding-left: 0.2rem;
+}
+
+/*-- 4- Tags --*/
+.sidebar .tags .box-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.sidebar .tag-item {
+    color: var(--black);
+    border: 0.1rem solid var(--main-color);
+    font-size: 1.7rem;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+}
+
+.sidebar .tag-item:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+/*------------------------------ (00)- Global CSS (End) ------------------------------*/
+
+
+
+/*------------------------------ (01)- Home (Start) ------------------------------*/
+
+/*----- 1- Home-Slider -----*/
+.home{ 
+    padding: 0;
+    position: relative;
+} 
+
+.home-slider {
+    position: relative;
+}
+
+.home-slider .swiper-button-next,
+.home-slider .swiper-button-prev {
+    opacity: 0;
+}
+
+.home-slider:hover .swiper-button-next,
+.home-slider:hover .swiper-button-prev {
+    opacity: 1;
+}
+
+.home-item{
+    height: 65rem;
+}
+
+.home-item .content {
+    padding: 10rem 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+}
+
+.home-item .content .text{
+    padding-top: 8rem;
+    width: 65rem;
+}
+
+.home-item .content h5 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+.home-item .content h3 {
+    font-size: 6rem;
+    margin-bottom: 2.5rem;
+    color: var(--white);
+    letter-spacing: 0.15rem;
+}
+
+/*----- 2- Counter -----*/
+.counting {
+    width: 100%;
+    padding: 4rem 5%;
+    margin: 1rem 0;
+    min-height: 15rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 3rem;
+    background: var(--custom-bg-color), url("../image/Counter.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.counting .box {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 25rem;
+    flex: 1 1 25rem;
+    padding: 0rem 1rem;
+    text-align: left;
+}
+
+.counting .box i {
+    height: 6rem;
+    width: 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: var(--main-color);
+    font-size: 5rem;
+}
+
+.counting .box h3 {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+    position: relative;
+}
+
+.counting .box h3:after {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    content: "";
+    height: 1.5px;
+    width: 8rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.counting .box .count {
+    color: var(--main-color);
+    font-size: 4.5rem;
+    line-height: 1;
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+/*----- 3- Service Slider -----*/
+.service-slider {
+    overflow: hidden;
+    padding: 0.5rem;
+}
+
+/*----- 4- Skills -----*/
+.skills-section {
+    padding: 0;
+}
+
+.skills-section .box-container {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../image/Skill.jpg");
+    background:         linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../image/Skill.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+    padding: 5rem 5%;
+}
+
+.skills-section .content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 45rem;
+        flex: 1 1 45rem;
+}
+
+.skills-section .heading {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+    padding-bottom: 0;
+}
+
+.skills-section .content h3 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.3;
+    padding-bottom: 1rem;
+}
+
+.skills-section .content p {
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    color: var(--light-grey);
+}
+
+.skills-section .skills .box {
+    padding: 1rem 0;
+}
+
+.skills-section .skills .box h3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+    font-size: 1.7rem;
+    color: var(--white);
+    font-weight: 400;
+}
+
+.skills-section .skills .box .progress-bar {
+    width: 100%;
+    background: var(--light-grey);
+    overflow: hidden;
+    height: 0.4rem;
+}
+
+.skills-section .skills .box .progress-bar span {
+    display: block;
+    height: 100%;
+    background: var(--main-color);
+}
+
+.skills-section .image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 38rem;
+    flex: 1 1 38rem;
+    padding: 0.5rem;
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+    background-color: var(--white);
+    height: 40rem;
+}
+
+.skills-section .image img {
+    -webkit-clip-path: var(--clip-path-2);
+            clip-path: var(--clip-path-2);
+}
+
+/*----- 5- Banner -----*/
+.banner {
+    width: 100%;
+    padding: 8rem 8%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../image/Banner.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../image/Banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.banner .content {
+    width: 100%;
+    text-align: center;
+}
+
+.banner h3 {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--main-color);
+    padding-bottom: 2rem;
+}
+
+.banner h2 {
+    font-size: 6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--white);
+    padding-bottom: 2rem;
+}
+
+/*----- 6- Testimonials -----*/
+.testimonial-bg {
+    background-color: var(--black);
+}
+
+/*----- 7- Blogs -----*/
+.blog.main .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(33rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    gap: 1rem;
+}
+
+/*----- 8- Newsletter -----*/
+.newsletter-subscribe {
+    width: 100%;
+    padding: 8rem 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../image/Footer.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../image/Footer.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.newsletter-subscribe .content {
+    width: 80rem;
+    text-align: center;
+}
+
+.newsletter-subscribe h2 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: var(--light-grey);
+    padding-bottom: 2rem;
+}
+
+.newsletter-subscribe p {
+    letter-spacing: 0.15rem;
+    font-weight: 500;
+    color: var(--white);
+    padding-bottom: 3rem;
+}
+
+.newsletter-subscribe form {
+    max-width: 50rem;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.newsletter-subscribe input {
+    height: 5rem;
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    color: var(--black);
+    background-color: var(--white);
+    text-transform: none;
+    font-size: 1.5rem;
+}
+
+/*----- 9- Partners -----*/
+.partners .partner-slider {
+    overflow: hidden;
+}
+
+/*------------------------------ (01)-Home (End) ------------------------------*/
+
+
+
+/*------------------------------ (02)-About (Start) ------------------------------*/
+.about-us {
+    padding: 0;
+}
+
+/*----- 1- About Us -----*/
+.about .box-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about .image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+    overflow: hidden;
+    height: 50rem;
+    position: relative;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.about img{
+    overflow: hidden;
+}
+
+.about .experience {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 3rem;
+    color: var(--black);
+    background-color: rgba(255, 255, 255, 0.8);
+    line-height: 1.2;
+}
+
+.about .experience h3 {
+    font-size: 6rem;
+    position: relative;
+}
+
+.about .experience h3:after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background-color: var(--main-color);
+    height: 0.16rem;
+    width: 6rem;
+}
+
+.about .experience p {
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.about .content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+}
+
+.about .heading {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+}
+
+.about .heading h2 {
+    text-align: left;
+}
+
+.about .about-points {
+    padding-top: 0.5rem;
+    list-style-type: none;
+}
+
+.about .about-points .text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about .about-points li i {
+    height: 3rem;
+    width: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+
+.about .about-points li p {
+    font-size: 1.4rem;
+}
+
+.about .content .btn {
+    margin-top: 2rem;
+}
+
+.about .about-features {
+    padding-top: 0.5rem;
+    list-style-type: none;
+}
+
+.about .about-features .text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about .about-features li i {
+    height: 3rem;
+    width: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.about .about-features li p {
+    font-size: 1.4rem;
+    padding-bottom: 0rem;
+}
+
+/*----- 2- Team -----*/
+.team .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.team-item {
+    overflow: hidden;
+}
+
+.team-item .image {
+    position: relative;
+    height: 33rem;
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+}
+
+.team-item:hover .image img {
+    scale: 1.1;
+}
+
+.team-item .icon-container {
+    position: absolute;
+    top: 1.5rem;
+    right: -100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.team-item:hover .icon-container {
+    right: 1.5rem;
+}
+
+.team-item .icon-container a {
+    height: 3.5rem;
+    width: 3.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--main-color);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    font-size: 1.5rem;
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+}
+
+.team-item .icon-container a:hover {
+    color: var(--white);
+    background-color: var(--auxiliary-color);
+}
+
+.team-item .content {
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.team-item .content h3 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.team-item .content h3:hover {
+    color: var(--auxiliary-color);
+}
+
+.team-item .content p {
+    font-weight: 500;
+    padding-top: 0.7rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+/*----- 3- Team Single -----*/
+.team-single .team-intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.team-single .image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 25rem;
+        flex: 1 1 25rem;
+    height: 50rem;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.team-single .image img {
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.team-single .information {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50rem;
+        flex: 1 1 50rem;
+}
+
+.team-single .information h3 {
+    color: var(--black);
+    font-size: 3rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+}
+
+.team-single .information h5 {
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+}
+
+.team-single .information .team-about {
+    padding-top: 1.5rem;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.team-single .information h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+}
+
+.team-single .text {
+    font-size: 1.6rem;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    color: var(--grey);
+    line-height: 1.7;
+}
+
+.team-single .team-contacts {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.team-single .team-contacts li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.team-single .team-contacts i {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    padding-right: 0.5rem;
+}
+
+.team-single .team-contacts span {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    text-transform: none;
+}
+
+.team-single .icon-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.team-single .icon-container a {
+    height: 4rem;
+    width: 4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.team-single .icon-container a:hover {
+    background-color: var(--secondary-color);
+}
+
+.team-single .team-experience {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+        flex: 1 1 42rem;
+    padding-bottom: 2rem;
+    padding-top: 0rem !important;
+}
+
+.team-single .team-experience h4 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--black);
+    padding-bottom: 1rem;
+}
+
+.team-single .box-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding-top: 2rem;
+}
+
+.team-single .team-skills {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+        flex: 1 1 42rem;
+    width: 100%;
+}
+
+.team-single .skills .box {
+    padding: 1rem 0;
+}
+
+.team-single .skills .box h3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    font-size: 1.7rem;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.team-single .skills .box .progress-bar {
+    width: 100%;
+    background: var(--secondary-color);
+    overflow: hidden;
+    height: 0.4rem;
+}
+
+.team-single .skills .box .progress-bar span {
+    display: block;
+    height: 100%;
+    background: var(--main-color);
+}
+
+.team-single ul {
+    list-style: none;
+}
+
+.team-single .sub-section ul li {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--grey);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.team-single .sub-section ul i {
+    color: var(--main-color);
+    font-size: 1.4rem;
+    height: 1.8rem;
+    width: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/*----- 4- Testimonials -----*/
+.testimonial {
+    position: relative;
+}
+
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    padding-top: 2rem;
+    padding-bottom: 7rem;
+}
+
+.testimonial .swiper-pagination-bullet {
+    background: var(--secondary-color);
+    opacity: 0.9;
+}
+
+.testi-item {
+    padding: 3rem 4rem;
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../image/pageTitle.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../image/pageTitle.jpg");
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../image/pageTitle.jpg");
+    background-position: center;
+    background-size: cover;
+    border: 0.1rem solid var(--grey);
+}
+
+.testi-item .content {
+    position: relative;
+    border-bottom: 0.1rem solid var(--grey);
+    padding-bottom: 2rem;
+}
+
+.testi-item .content p {
+    color: var(--light-grey);
+}
+
+.testi-item .content .fa-quote-right {
+    position: absolute;
+    font-size: 4rem;
+    color: var(--main-color);
+    bottom: 5%;
+    right: 0%;
+}
+
+.testi-item .rating {
+    font-size: 2rem;
+    color: var(--main-color);
+    padding-top: 1rem;
+}
+
+.testi-item .image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.testi-item .image img {
+    width: 8rem;
+    height: 8rem;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+}
+
+.testi-item .image .info h4 {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    color: var(--light-grey);
+}
+
+.testi-item .image .info p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+/*----- 5- Faqs -----*/
+.faq .box-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 2rem;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.faq .image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 30rem;
+    flex: 1 1 30rem;
+    height: 60rem;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    overflow: hidden;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.accordion-container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 55rem;
+    flex: 1 1 55rem;
+}
+
+.accordion {
+    background: var(--white);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.accordion:last-child {
+    margin-bottom: 0rem;
+}
+
+.accordion .accordion-heading {
+    padding: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.accordion.active .accordion-heading {
+    background-color: var(--main-color);
+}
+
+.accordion .accordion-heading i {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 0.2rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.accordion .accordion-heading h3 {
+    color: var(--black);
+}
+
+.accordion.active .accordion-heading h3 {
+    color: var(--white);
+}
+
+.accordion.active .accordion-content {
+    display: block;
+    background-color: var(--white);
+    border: 0.1rem solid var(--main-color);
+}
+
+.accordion.active .accordion-heading i {
+    color: var(--main-color);
+    background-color: var(--white);
+}
+
+.accordion-content {
+    padding: 2rem;
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--grey);
+    display: none;
+}
+
+/*------------------------------ (02)-About (End) ------------------------------*/
+
+
+
+/*------------------------------ (03)-Pages (Start) ------------------------------*/
+
+/*--------------- COMPONENTS ---------------*/
+
+/*----- 01- Account-Form -----*/
+.account-form {
+    max-width: 45rem;
+    padding: 5rem;
+    background: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    margin: 0rem auto;
+    text-align: center;
+}
+
+.account-form h3 {
+    font-size: 3.5rem;
+    line-height: 1.3;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.account-form .box {
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    background-color: transparent;
+    border: 0.15rem solid rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    text-transform: none;
+    margin: 0.7rem 0;
+}
+
+.account-form .box::-webkit-input-placeholder {
+    text-transform: capitalize;
+    color: var(--grey);
+}
+
+.account-form .box::-moz-placeholder {
+    text-transform: capitalize;
+    color: var(--grey);
+}
+
+.account-form .box:-ms-input-placeholder {
+    text-transform: capitalize;
+    color: var(--grey);
+}
+
+.account-form .box::placeholder {
+    text-transform: capitalize;
+    color: var(--grey);
+}
+
+.account-form .box:focus {
+    border-color: var(--main-color);
+}
+
+.account-form p {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.account-form .btn {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.account-form .link {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.account-form .link:hover {
+    text-decoration: underline;
+}
+
+.account-form .checkbox-label {
+    color: var(--grey);
+    position: relative;
+    padding-left: 2.5rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.account-form .checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.account-form .checkbox-indicator {
+    position: absolute;
+    top: 0.2rem;
+    left: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    background: transparent;
+    outline: 0.15rem solid var(--grey);
+    border-radius: 0.2rem;
+}
+
+.account-form .checkbox-label input:checked~.checkbox-indicator {
+    background: var(--main-color);
+    outline-color: var(--main-color);
+}
+
+.account-form .checkbox-indicator:after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0.2rem;
+    width: 0.3rem;
+    height: 0.8rem;
+    border: solid var(--light-grey);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: none;
+}
+
+.account-form .checkbox-label input:checked~.checkbox-indicator:after {
+    display: initial;
+}
+
+/*----- 02- Tab Informatin -----*/
+.tab-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-buttons .button {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1.5rem 3rem;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.tab-buttons .button:hover,
+.tab-buttons .button.active {
+    background-color: var(--main-color);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    cursor: pointer;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.tab-section {
+    display: none;
+}
+
+.tab-section.active {
+    display: block;
+    margin-top: 2rem;
+}
+
+/*----- 03- Page Single -----*/
+.page-single {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.page-info {
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 75rem;
+    flex: 1 1 75rem;
+}
+
+.page-info .image {
+    height: 40rem;
+}
+
+.page-info .image img {
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.page-info .content {
+    padding-top: 2rem;
+}
+
+.page-info .main-heading {
+    display: inline-block;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    padding-bottom: 1rem;
+}
+
+.page-info p {
+    padding-bottom: 1rem;
+}
+
+.page-info .page-gallery {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+.page-info .page-gallery img {
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.page-info .sub-heading {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+.page-info .sub-section {
+    padding-top: 2rem;
+}
+
+.page-info .sub-section p {
+    margin-bottom: -1rem;
+}
+
+.page-info .sub-section ul {
+    list-style: none;
+}
+
+.page-info .sub-section ul li {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--grey);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-info .sub-section ul i {
+    color: var(--main-color);
+    font-size: 1.4rem;
+    height: 1.8rem;
+    width: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/*----- 04- Page Sidebar -----*/
+.page-sidebar {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 25rem;
+    flex: 1 1 25rem;
+    padding: 4rem;
+    background: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.page-sidebar .sub-heading {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--black);
+    padding: 0.5rem 0rem;
+    padding-left: 1rem;
+    line-height: 1;
+    border-left: 0.3rem solid var(--main-color);
+    margin-bottom: 2rem;
+}
+
+.page-sidebar .detail-item {
+    padding-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.page-sidebar .detail-item:last-child {
+    padding-bottom: 0;
+}
+
+.page-sidebar .detail-item i {
+    height: 2rem;
+    width: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+
+.page-sidebar .detail-item h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1;
+    padding-bottom: 0.5rem;
+}
+
+.page-sidebar .website {
+    text-transform: none;
+}
+
+.page-sidebar .btn {
+    margin-top: 2rem;
+}
+
+/*--------------- PAGES ---------------*/
+
+/*----- 1- Gallery -----*/
+.gallery .box-container {
+    height: 100%;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    grid-template-areas:
+        'gallery-1 gallery-1 gallery-2 gallery-3'
+        'gallery-4 gallery-5 gallery-6 gallery-6'
+        'gallery-7 gallery-7 gallery-8 gallery-9';
+}
+
+.gallery-1 {
+    grid-area: gallery-1;
+}
+
+.gallery-2 {
+    grid-area: gallery-2;
+}
+
+.gallery-3 {
+    grid-area: gallery-3;
+}
+
+.gallery-4 {
+    grid-area: gallery-4;
+}
+
+.gallery-5 {
+    grid-area: gallery-5;
+}
+
+.gallery-6 {
+    grid-area: gallery-6;
+}
+
+.gallery-7 {
+    grid-area: gallery-7;
+}
+
+.gallery-8 {
+    grid-area: gallery-8;
+}
+
+.gallery-9 {
+    grid-area: gallery-9;
+}
+
+.gallery-item {
+    padding: 0.5rem;
+    height: 25rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-content {
+    height: 25rem;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.gallery-item .content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    opacity: 0;
+    scale: 0.8;
+    background-color: rgba(0, 0, 0, 0.7);
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.gallery-item:hover .content {
+    scale: 1;
+    opacity: 1;
+}
+
+.gallery-item a i {
+    height: 4.5rem;
+    width: 4.5rem;
+    font-size: 1.8rem;
+    color: var(--white);
+    background-color: transparent;
+    border: 0.15rem solid var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.gallery-item a i:hover {
+    border-color: var(--main-color);
+    background-color: var(--main-color);
+}
+
+/*----- 2- Process -----*/
+.process-slider {
+    overflow: hidden;
+    padding: 0.5rem;
+}
+
+.process .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(32rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 3rem;
+}
+
+.process-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.process-item img {
+    height: 20rem;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.process-item .content {
+    padding-top: 1rem;
+}
+
+.process-item span {
+    height: 5rem;
+    width: 6rem;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    right: 0%;
+    margin: 1rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.process-item h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+/*----- 3- Pricing -----*/
+.pricing .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(33rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    gap: 1rem;
+}
+
+.price-item {
+    overflow: hidden;
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    padding-bottom: 1rem;
+}
+
+.price-item.middle {
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../image/Price.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../image/Price.jpg");
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../image/Price.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.price-item .title {
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../image/Price.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../image/Price.jpg");
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../image/Price.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 500;
+    padding: 4.5rem 4rem;
+    text-align: center;
+}
+
+.price-item .title h2 {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.price-item.middle .title {
+    background: none;
+    padding-bottom: 2rem;
+}
+
+.price-item .content {
+    padding: 2rem 4rem;
+}
+
+.price-item .price {
+    color: var(--main-color);
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 0.15rem solid var(--light-grey);
+}
+
+.price-item.middle .price {
+    border-bottom: 0.15rem solid var(--grey);
+}
+
+.price-item .price span {
+    font-size: 2rem;
+    font-weight: normal;
+    color: var(--grey);
+}
+
+.price-item.middle .price span {
+    color: var(--light-grey);
+}
+
+.price-item h6 {
+    padding-top: 2rem;
+    font-size: 1.8rem;
+    color: var(--grey);
+}
+
+.price-item.middle h6 {
+    color: var(--light-grey);
+}
+
+.price-item ul {
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.price-item ul li {
+    padding: 0.9rem 0;
+    font-size: 1.6rem;
+    color: var(--grey);
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+}
+
+.price-item.middle ul li {
+    color: var(--light-grey);
+}
+
+.price-item ul li i {
+    height: 1.8rem;
+    width: 1.8rem;
+    color: var(--main-color);
+    font-size: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/*----- 4- Request Quote -----*/
+.request-quote {
+    padding: 2rem 0;
+}
+
+.request-quote .box-container {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../image/Quote.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../image/Quote.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+    padding: 3rem 5%;
+}
+
+.request-quote .image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 38rem;
+    flex: 1 1 38rem;
+    padding: 0.5rem;
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+    background-color: var(--white);
+    height: 45rem;
+}
+
+.request-quote .image img {
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+}
+
+.request-quote .content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 45rem;
+    flex: 1 1 45rem;
+}
+
+.request-quote .heading {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+}
+
+.request-quote .heading h2 {
+    text-align: left;
+}
+
+.request-quote ::-webkit-calendar-picker-indicator {
+    -webkit-filter: invert(1);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+    filter: invert(1);
+}
+
+.request-quote form {
+    width: 100%;
+}
+
+/*----- 5- Partners -----*/
+.partners .box-container {
+    padding-top: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.partner-item {
+    width: 20rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/*----- 6- Career -----*/
+.career {
+    padding: 0;
+}
+
+.career .image {
+    border-radius: var(--border-radius-3);
+    overflow: hidden;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.career-benefits {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url("../image/Career.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url("../image/Career.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 6rem 5%;
+}
+
+.career-benefits .benefit-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+    gap: 1.5rem;
+}
+
+.career-benefits .benefit-item i {
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    border-radius: var(--border-radius-3);
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+}
+
+.career-benefits .benefit-item h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--white);
+    padding-bottom: 0.5rem;
+}
+
+.career-benefits .benefit-item p {
+    color: var(--light-grey);
+}
+
+.career-positions {
+    padding: 3rem 5%;
+}
+
+.career-positions .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(42rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
+    gap: 1.5rem;
+}
+
+.position-item {
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    padding: 2.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.position-item h3 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    padding-bottom: 1rem;
+}
+
+.position-item h3:hover {
+    color: var(--main-color);
+}
+
+.position-item h3 i {
+    padding-right: 1rem;
+}
+
+.position-item .tag {
+    display: inline-block;
+    background-color: rgba(102, 102, 102, 0.2);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.position-item .left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.position-item h5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0rem;
+}
+
+.position-item h5 i {
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+
+.position-item h5 span {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--black);
+}
+
+/*----- 7- Career Single -----*/
+
+/*----- 8- Login -----*/
+.login form .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.login form label {
+    font-size: 1.5rem;
+    color: var(--grey);
+    cursor: pointer;
+}
+
+/*----- 9- Register -----*/
+.register form .checkbox-label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 2rem 0;
+}
+
+.register form label {
+    font-size: 1.5rem;
+    color: var(--grey);
+    cursor: pointer;
+}
+
+.register form label span {
+    color: var(--main-color);
+}
+
+/*------------------------------ (03)-Pages (End) ------------------------------*/
+
+
+
+/*------------------------------ (04)-Service (Start) ------------------------------*/
+
+/*----- 1- Services -----*/
+.services .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(32rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 3.5rem;
+}
+
+.service-item {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 0.5rem solid var(--main-color);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    height: 40rem;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.service-item:hover img {
+    scale: 1.1;
+}
+
+.service-item .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.service-item i {
+    height: 8rem;
+    width: 9rem;
+    font-size: 3rem;
+    color: var(--main-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.service-item h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--white);
+    padding-bottom: 2rem;
+}
+
+.service-item h3:hover {
+    color: var(--main-color);
+}
+
+.service-item p {
+    color: var(--light-grey);
+    margin-bottom: 2.5rem;
+}
+
+.service-item .detail-btn {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-clip-path: var(--clip-path-2);
+        clip-path: var(--clip-path-2);
+}
+
+.service-item .detail-btn:hover {
+    background-color: var(--auxiliary-color);
+}
+
+/*----- 2- Service Single -----*/
+.service-single .faq .accordion-container {
+    padding-top: 0.5rem;
+}
+
+.service-single .sidebar .sidebar-item {
+    margin-bottom: 0;
+}
+
+/*------------------------------ (04)-Service (End) ------------------------------*/
+
+
+
+/*------------------------------ (05)-Project (Start) ------------------------------*/
+
+.projects {
+    padding: 2rem 5%;
+}
+
+/*----- 1- Projects -----*/
+.projects .tab-buttons {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.project-item {
+    width: 33.33%;
+    padding: 0.5rem;
+}
+
+.project-content {
+    height: 30rem;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.project-content:hover img {
+    scale: 1.1;
+}
+
+.project-item .content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.35));
+    background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.35));
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 3rem;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+}
+
+.project-item .content .view-image {
+    text-align: right;
+}
+
+.project-item .content .view i {
+    font-size: 1.8rem;
+    padding: 1rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    -webkit-transform: translate(4rem, -4rem);
+    transform: translate(4rem, -4rem);
+    opacity: 0;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.project-item .content .view i:hover {
+    color: var(--main-color);
+    background-color: var(--white);
+}
+
+.project-item:hover .content .view i {
+    -webkit-transform: translate(0rem, 0rem);
+    transform: translate(0rem, 0rem);
+    opacity: 1;
+}
+
+.project-item .text p {
+    font-weight: 400;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.project-item .text h3 {
+    font-size: 2.8rem;
+    color: var(--white);
+}
+
+.project-item .text h3:hover {
+    color: var(--main-color);
+}
+
+/*----- 2- Project Single -----*/
+.project-info .important {
+    color: var(--secondary-color) !important;
+    font-weight: 600;
+}
+
+/*------------------------------ (05)-Project (End) ------------------------------*/
+
+
+
+/*------------------------------ (06)-Blog (Start) ------------------------------*/
+
+/*--------------- COMPONENTS ---------------*/
+
+/*----- 01- Blog-Item -----*/
+.blog-item {
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+.blog-item .image {
+    height: 23rem;
+    position: relative;
+}
+
+.blog-item .date {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    display: inline-block;
+    font-size: 1.8rem;
+    color: var(--grey);
+    background-color: var(--white);
+    border-bottom: 0.3rem solid var(--main-color);
+    padding: 1.5rem;
+    text-align: center;
+    width: 8rem;
+    opacity: 0.9;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.blog-item .date span {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--black);
+    padding-bottom: 0.2rem;
+}
+
+.blog-item .content {
+    padding: 2rem;
+}
+
+.blog-item .main-heading {
+    display: block;
+    font-family: var(--font-family);
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    line-height: 1.3;
+    padding-bottom: 1rem;
+}
+
+.blog-item .main-heading:hover {
+    color: var(--main-color);
+}
+
+.blog-item .details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.blog-item h3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.7rem;
+    letter-spacing: 0px;
+}
+
+.blog-item h3 i {
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+
+.blog-item h3 span {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--grey);
+}
+
+.blog-item .label {
+    padding: 1rem;
+    background-color: var(--main-color);
+}
+
+.blog-item .label i {
+    color: var(--white);
+}
+
+.blog-item .label span {
+    color: var(--white);
+}
+
+/*----- 02- Comments -----*/
+.comment-item {
+    padding-bottom: 1rem;
+}
+
+.comment-item:last-child {
+    padding-bottom: 0;
+}
+
+.comment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.comment .comment-image {
+    height: 8rem;
+    width: 8rem;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    overflow: hidden;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.comment .comment-content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 35rem;
+    flex: 1 1 35rem;
+}
+
+.comment .comment-intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.comment h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.comment h6 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.comment .text {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--grey);
+    line-height: 1.5;
+}
+
+.comment .icon-item {
+    display: inline-block;
+    color: var(--white);
+    background-color: var(--main-color);
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+}
+
+.comment .icon-item:hover {
+    background-color: var(--secondary-color);
+}
+
+.comment .icon-item i {
+    color: var(--white);
+    font-size: 1.5rem;
+    padding-right: 0.5rem
+}
+
+.comment .icon-item span {
+    color: var(--white);
+    font-size: 1.6rem;
+}
+
+.comment.reply {
+    margin-left: 12rem;
+}
+
+.comment.reply .comment-content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 20rem;
+    flex: 1 1 20rem;
+}
+
+/*----- 03- Pages-No -----*/
+.pages-no {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.pages-no .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+}
+
+.pages-no .item {
+    color: var(--white);
+    background-color: var(--secondary-color);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    height: 5rem;
+    width: 5rem;
+    font-size: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.pages-no .item.active,
+.pages-no .item:hover {
+    cursor: pointer;
+    background-color: var(--main-color);
+}
+
+.pages-no .numbers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+}
+
+/*--------------- PAGES ---------------*/
+.blog-container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 75rem;
+    flex: 1 1 75rem;
+}
+
+/*----- 1- Blog Grid -----*/
+.blog.grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.blog-container.grid .blog-items {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(33rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    gap: 1rem;
+}
+
+/*----- 2- Blog List -----*/
+.blog.list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.blog-container.list .blog-item {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.blog-container.list .blog-item .image {
+    height: 30rem;
+}
+
+/*----- 3- Blog Single -----*/
+/*
+1- Blog Info
+2- Comments
+3- Leave A Reply
+*/
+
+.blog-single {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/*-- 1- Blog Info --*/
+.blog-info .image {
+    position: relative;
+}
+
+.blog-info .date {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    display: inline-block;
+    font-size: 1.8rem;
+    color: var(--grey);
+    background-color: var(--white);
+    border-bottom: 0.3rem solid var(--main-color);
+    padding: 1.5rem;
+    text-align: center;
+    width: 8rem;
+    opacity: 0.9;
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.blog-info .date span {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--black);
+    padding-bottom: 0.2rem;
+}
+
+.blog-info .details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.blog-info .details h5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.blog-info .details h5 i {
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+
+.blog-info .details h5 span {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--grey);
+}
+
+.blog-info .details .label {
+    padding: 1rem;
+    background-color: var(--main-color);
+}
+
+.blog-info .details .label i,
+.blog-info .details .label span {
+    color: var(--white);
+}
+
+.blog-info .important {
+    padding: 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--grey);
+    font-style: italic;
+    line-height: 1.8;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--light-grey);
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.blog-info .important i {
+    font-size: 5rem;
+    color: var(--main-color);
+}
+
+.blog-info .important h6 {
+    font-size: 2rem;
+    color: var(--black);
+    font-style: normal;
+}
+
+.blog-info .end-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 2rem;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.blog-info .tags,
+.blog-info .share {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.blog-info .tags span {
+    color: var(--black);
+    border: 0.1rem solid var(--main-color);
+    font-size: 1.6rem;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+}
+
+.blog-info .tags span:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+.blog-info .share h3 {
+    color: var(--black);
+    font-size: 1.6rem;
+    padding-right: 1rem;
+}
+
+.blog-info .share i {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--main-color);
+    font-size: 1.2rem;
+}
+
+.blog-info .share i:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+/*-- 2- Comments --*/
+.blog-single .comments {
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.blog-single .comments h4 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    padding-bottom: 2rem;
+}
+
+/*-- 3- Leave A Reply --*/
+.blog-single .leave-reply {
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.blog-single .leave-reply h3 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    padding-bottom: 2rem;
+}
+
+/*------------------------------ (06)-Blog (End) ------------------------------*/
+
+
+
+/*------------------------------ (07)-Shop (Start) ------------------------------*/
+
+/*--------------- COMPONENTS ---------------*/
+
+/*----- 01- Filter -----*/
+.filter .box-container {
+    padding-top: 4rem;
+}
+
+.filter .slider {
+    height: 3px;
+    position: relative;
+    background: #ddd;
+}
+
+.filter .slider .progress {
+    height: 100%;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    background: var(--secondary-color);
+    -webkit-transition: none;
+    transition: none;
+}
+
+.range-input {
+    position: relative;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 11px;
+    width: 11px;
+    background: var(--secondary-color);
+    pointer-events: auto;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+input[type="range"]::-moz-range-thumb {
+    height: 17px;
+    width: 17px;
+    border: none;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    pointer-events: auto;
+    -moz-appearance: none;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.price-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    color: #242424;
+    font-size: 14px;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin-bottom: 0px;
+    margin-top: 3rem;
+}
+
+.filter .price-input {
+    width: 15rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--grey);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+}
+
+.filter .price-input .field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.2rem;
+    width: 100%;
+    height: 3rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.filter .field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 1.5rem;
+    text-align: center;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    color: var(--grey);
+    background-color: transparent;
+}
+
+.filter input[type="number"]::-webkit-outer-spin-button,
+.filter input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.filter .price-input .separator {
+    width: 10rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.8rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+/*----- 02- Shop Header -----*/
+.shop .intro {
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    padding: 1rem 1.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.05);
+}
+
+.shop .intro .showing {
+    font-size: 1.6rem;
+    color: var(--grey);
+}
+
+.shop .intro .styles {
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+}
+
+.shop .intro .styles a {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.shop .intro .styles a:hover {
+    color: var(--main-color);
+}
+
+.shop .intro .sorting-type label {
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-right: 0.5rem;
+}
+
+.shop .intro .sorting-type select {
+    font-size: 1.4rem;
+    color: var(--grey);
+    background-color: transparent;
+    border: var(--border);
+    padding: 1rem;
+}
+
+/*----- 03- Quantity Box -----*/
+.quantity.buttons_added {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    height: 4rem;
+    width: 11rem;
+    margin: 0 auto;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+    width: 3rem;
+    color: var(--black);
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+    background: var(--main-color);
+    color: var(--white);
+}
+
+.quantity .input-text.qty {
+    padding: 0 1rem;
+    text-align: center;
+    background-color: transparent;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.quantity.buttons_added .minus:focus,
+.quantity.buttons_added .plus:focus {
+    outline: none;
+}
+
+/*----- 04- product-item -----*/
+.product-item {
+    overflow: hidden;
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.product-item .image {
+    width: 100%;
+    height: 25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-item .options {
+    position: absolute;
+    bottom: -100%;
+    right: 50%;
+    -webkit-transform: translate(50%);
+    transform: translate(50%);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-item:hover .options {
+    bottom: 1rem;
+}
+
+.product-item .options a {
+    height: 4rem;
+    width: 4rem;
+    font-size: 1.8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    background: var(--main-color);
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.product-item .options a:hover {
+    background-color: var(--auxiliary-color);
+}
+
+.product-item .content {
+    padding: 1.5rem;
+}
+
+.product-item h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+.product-item h3:hover {
+    color: var(--main-color);
+}
+
+.product-item .rating i {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    padding-bottom: 1rem;
+}
+
+.product-item p {
+    padding-bottom: 1rem;
+}
+
+.product-item .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+    padding-bottom: 0.8rem;
+}
+
+.product-item .price span {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: var(--grey);
+    padding-left: 0.2rem;
+}
+
+/*----- 05- Shop-Title -----*/
+.shoplist-title {
+    background-color: var(--main-color);
+    color: var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.shoplist-title h3 {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 10rem;
+    flex: 1 1 10rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.shoplist-title h3.product-heading {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 20rem;
+    flex: 1 1 20rem;
+    text-align: left;
+}
+
+/*----- 06- Cart-Summary -----*/
+.summary-list {
+    padding-top: 1rem;
+}
+
+.summary-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.summary-item .name {
+    font-weight: 600;
+}
+
+.summary-item .value {
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+/*--------------- PAGES ---------------*/
+.shop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.shop .shop-container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 75rem;
+    flex: 1 1 75rem;
+}
+
+/*----- 1- Shop Grid -----*/
+.shop .product-container.grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1rem;
+}
+
+/*----- 2- Shop Standard -----*/
+.shop .product-container.list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.shop .product-container.list .product-item {
+    width: 100%;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.shop .product-container.list .product-item .image {
+    height: 100%;
+}
+
+.shop .product-container.list .product-item .content {
+    text-align: left;
+    padding: 1.5rem;
+}
+
+/*----- 3- Product Single -----*/
+.product-single .product-des {
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+.product-single .product-des .box-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.product-single .product-des .box-container .image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 35rem;
+    flex: 1 1 35rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.product-single .product-des .box-container .image-container {
+    max-width: 50rem;
+}
+
+.product-single .product-des .box-container .image-container .main {
+    width: 100%;
+    height: 40rem;
+    overflow: hidden;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.product-single .product-des .box-container .image .change-btns {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(8rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+
+}
+
+.product-single .product-des .box-container .image .change-btns img {
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.product-single .product-des .image .change-btns img:hover,
+.product-single .product-des .image .change-btns img.active {
+    border: 0.4rem solid var(--main-color);
+}
+
+.product-single .product-des .box-container .content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 45rem;
+    flex: 1 1 45rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.product-single .product-des .box-container .content h3 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.product-single .product-des .box-container .content .intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem 0;
+}
+
+.product-single .product-des .box-container .content .intro .rating {
+    color: var(--main-color);
+    font-size: 1.6rem;
+}
+
+.product-single .product-des .box-container .content .intro span {
+    color: var(--grey);
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding-left: 1rem;
+}
+
+.product-single .product-des .box-container .content .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.product-single .product-des .box-container .content .price span {
+    color: var(--grey);
+    font-weight: lighter;
+    text-decoration: line-through;
+}
+
+.product-single .product-des .box-container .content p {
+    padding: 2rem 0;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+.product-single .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.product-single .qty {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    width: 15rem;
+}
+
+.product-single .product-des .box-container .content .btn {
+    margin: 2rem 0;
+}
+
+.product-single .categories,
+.product-single .tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.product-single .qty h4,
+.product-single .categories h4,
+.product-single .tags h4 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.product-single .categories a,
+.product-single .tags a {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--grey);
+    padding: 0 0.5rem;
+}
+
+.product-single .categories a:hover,
+.product-single .tags a:hover {
+    color: var(--secondary-color);
+}
+
+/*-- Related Products --*/
+.related-items .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/*-- Product Addtional Information --*/
+.product-single .tab-info {
+    margin-top: 4rem;
+}
+
+.product-info .additional-info .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.product-info .additional-info h3 {
+    width: 20rem;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+
+.product-info .additional-info span {
+    font-size: 1.6rem;
+    color: var(--grey);
+}
+
+.product-info h2 {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    padding-bottom: 1rem;
+}
+
+.product-info .reviews {
+    margin-bottom: 2rem;
+}
+
+.product-info .leave-reply {
+    width: 60rem;
+}
+
+/*----- 4- Wishlist  ------*/
+.wishlist-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    background-color: var(--white);
+}
+
+.wishlist-container::-webkit-scrollbar {
+    height: 0.8rem;
+}
+
+.wishlist .container {
+    min-width: 90rem;
+}
+
+.wishlist .box-container {
+    padding: 0rem 1rem;
+}
+
+.wishlist-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 1rem 0rem;
+    gap: 3rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-item:last-child {
+    border: none;
+}
+
+.wishlist-item .box {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 20rem;
+    flex: 1 1 20rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.wishlist-item .product {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 30rem;
+    flex: 1 1 30rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    gap: 1.5rem;
+}
+
+.wishlist-item img {
+    height: 8rem;
+    width: 8rem;
+    background-color: #f7f7f7;
+}
+
+.wishlist-item .name {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.wishlist-item .price {
+    color: var(--grey);
+    font-weight: 500;
+}
+
+.wishlist-item .status.in {
+    color: green;
+}
+
+.wishlist-item .status.out {
+    color: red;
+}
+
+.wishlist-item .action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.wishlist-item a {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.wishlist-item a:hover {
+    color: var(--secondary-color);
+}
+
+.wishlist-item .delete {
+    color: red;
+}
+
+.wishlist-item .cart {
+    color: var(--secondary-color);
+}
+
+/*----- 5- Cart  ------*/
+.shopping-cart {
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.cart .container {
+    min-width: 90rem;
+}
+
+.shopping-cart::-webkit-scrollbar {
+    height: 0.8rem;
+}
+
+.cart .box-container {
+    padding: 0rem 1rem;
+}
+
+.cart-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 1rem 0rem;
+    gap: 3rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.cart-item:last-child {
+    border: none;
+}
+
+.cart-item .box {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 15rem;
+    flex: 1 1 15rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.cart-item .product {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 25rem;
+    flex: 1 1 25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    gap: 1.5rem;
+}
+
+.cart-item img {
+    height: 8rem;
+    width: 8rem;
+    background-color: #f7f7f7;
+}
+
+.cart-item .name {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.cart-item .price,
+.cart-item .total {
+    color: var(--grey);
+}
+
+.cart-item .icon {
+    font-size: 2rem;
+    cursor: pointer;
+    color: red;
+}
+
+.cart-item .icon:hover {
+    color: var(--secondary-color);
+}
+
+/*-- 2- Cart Total --*/
+.cart .cart-summary {
+    width: 40rem;
+    padding: 1rem;
+    margin-right: auto;
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.cart .cart-summary .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/*----- 6- Checkout -----*/
+/*
+1- Payment Method
+2- Cart Total
+*/
+
+.checkout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.checkout .heading {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+}
+
+.checkout h2 {
+    font-size: 3.5rem;
+}
+
+.checkout h2:before {
+    left: 0;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+.checkout .box-1 {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 55rem;
+    flex: 1 1 55rem;
+}
+
+.checkout .box-2 {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 35rem;
+    flex: 1 1 35rem;
+}
+
+.checkout-item {
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+.checkout .box-1 .checkout-item:last-child {
+    margin-bottom: 0;
+}
+
+/*-- 1- Payment Method --*/
+.payment-methods .payment {
+    margin-bottom: 1.5rem;
+}
+
+.payment-methods .payment label {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.payment input:checked+label,
+.payment label:hover {
+    color: var(--main-color);
+}
+
+.payment input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.payment input[type="radio"]+.radio-label:before {
+    content: '';
+    background: #f4f4f4;
+    border-radius: 100%;
+    border: 0.1rem solid var(--grey);
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    top: 0;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+.payment input[type="radio"]:checked+.radio-label:before {
+    background-color: var(--main-color);
+    -webkit-box-shadow: inset 0 0 0 4px #f4f4f4;
+            box-shadow: inset 0 0 0 4px #f4f4f4;
+    outline: none;
+    border-color: var(--main-color);
+}
+
+.payment-body {
+    display: none;
+}
+
+.payment-body.active {
+    display: block;
+}
+
+.payment-methods .payment .payment-body p {
+    padding-top: 1rem;
+}
+
+.checkout .btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.checkout .btn {
+    width: 100%;
+    text-align: center;
+}
+
+/*------------------------------ (07)-Shop (End) ------------------------------*/
+
+
+
+/*------------------------------ (08)-Contact (Start) ------------------------------*/
+
+/*-- Contact Information --*/
+.contact-info {
+    padding: 3rem;
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../image/Contact.jpg");
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../image/Contact.jpg");
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../image/Contact.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+}
+
+.contact .contact-info h2 {
+    color: var(--light-grey);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact .contact-info .content-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contact .contact-info .info-item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 18rem;
+    flex: 1 1 18rem;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    border: 0.15rem solid var(--main-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    padding-top: 4rem;
+    margin-top: 1.5rem;
+}
+
+.contact .contact-info .info-item i {
+    font-size: 2.2rem;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    line-height: 1.7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--main-color);
+    -webkit-clip-path: var(--clip-path-1);
+        clip-path: var(--clip-path-1);
+}
+
+.contact .contact-info .info-item h3 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--light-grey);
+    padding-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.contact .contact-info .info-item p {
+    color: var(--light-grey);
+    padding-bottom: 0.5rem;
+}
+
+.contact .contact-info .info-item p.gmail {
+    text-transform: none;
+}
+
+.contact .box-container {
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.contact .heading {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+}
+
+/*-- Contact Form --*/
+.contact-container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+        flex: 1 1 42rem;
+    padding: 2rem 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.contact-container form {
+    width: 100%;
+}
+
+.contact-form .input-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-form .box {
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    border: 0.15rem solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    text-transform: none;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form .box:focus {
+    border-color: var(--main-color);
+}
+
+.contact-form .box::-webkit-input-placeholder {
+    text-transform: capitalize;
+    color: var(--grey);
+}
+
+.contact-form .box::-moz-placeholder {
+    text-transform: capitalize;
+    color: var(--grey);
+}
+
+.contact-form .box:-ms-input-placeholder {
+    text-transform: capitalize;
+    color: var(--grey);
+}
+
+.contact-form .box::placeholder {
+    text-transform: capitalize;
+    color: var(--grey);
+}
+
+.contact-form textarea.box {
+    height: 18rem;
+    resize: none;
+}
+
+.contact-form .alert {
+    font-size: 2rem;
+    color: var(--main-color);
+    padding-left: 1rem;
+}
+
+/*-- Google Map --*/
+.contact iframe {
+    width: 100%;
+    height: 30rem;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+/*------------------------------ (06)-Contact (End) ------------------------------*/

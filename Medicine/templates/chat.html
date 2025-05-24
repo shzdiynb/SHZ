@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="chat-container">
+    <h2>用户提问审核</h2>
+    <div class="import-header">
+        <!-- 下载示例文件按钮 -->
+        <div class="download-example">
+            <a href="{{ url_for('chat_review') }}" id="chatreview-btn" class="btn btn-secondary">
+                一键审核
+            </a>
+
+        </div>
+    </div>
+    <div id="loading-indicator" class="loading">加载中...</div>
+    <table class="chat-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户</th>
+                <th>邮箱</th>
+                <th>问题</th>
+                <th>回答</th>
+                <th>权限</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+        <tbody id="chat-list">
+            <!-- 数据将通过JavaScript动态加载 -->
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button id="prev-page" disabled>上一页</button>
+        <span id="page-info">第1页</span>
+        <button id="next-page">下一页</button>
+    </div>
+</div>
+
+<!-- 只需要在底部引入一次 -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}

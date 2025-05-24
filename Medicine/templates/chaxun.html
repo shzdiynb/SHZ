@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中医智达</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #e0e0e0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar button {
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .history {
+            flex: 1;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+        .history-item {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        .message-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .user-message, .bot-message {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 8px 12px;
+            max-width: 70%;
+        }
+        .bot-message {
+            background-color: #e5f4fc;
+        }
+        .user-message {
+            background-color: #d9f7be;
+        }
+        .chat-input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+        }
+        .chat-input input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .bot-avatar {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    {% if session.logged_in %}
+  <p>欢迎你，{{ session.user_name }}</p>
+{% endif %}
+
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="newChat()">新建对话组</button>
+            <div class="history" id="chat-history">
+                <!-- 历史对话将添加到这里 -->
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message-container bot-message-container">
+                    <img src="static/picture/logo.png" alt="机器人头像" class="bot-avatar">
+                    <div class="bot-message">欢迎使用中医小助手！</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="输入你的消息...">
+                <button onclick="sendMessage()">发送</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("user-input").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // 阻止默认行为（比如换行）
+            sendMessage();
+        }
+    });
+        let chatCounter = 1;
+        let sessionId = Date.now().toString();
+        let chatHistory = [];
+    
+        async function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            if (userInput.trim() === "") return;
+
+            var chatMessages = document.getElementById("chat-messages");
+
+            var userMessageContainer = document.createElement("div");
+            userMessageContainer.classList.add("message-container");
+
+            var userAvatar = document.createElement("img");
+            userAvatar.src = "static/picture/user.png";
+            userAvatar.alt = "用户头像";
+            userAvatar.classList.add("avatar");
+
+            var userMessageElement = document.createElement("div");
+            userMessageElement.classList.add("user-message");
+            userMessageElement.textContent = userInput;
+
+            userMessageContainer.appendChild(userAvatar);
+            userMessageContainer.appendChild(userMessageElement);
+            chatMessages.appendChild(userMessageContainer);
+
+            document.getElementById("user-input").value = "";
+
+            var botMessageContainer = document.createElement("div");
+            botMessageContainer.classList.add("message-container", "bot-message-container");
+
+            var botAvatar = document.createElement("img");
+            botAvatar.src = "static/picture/logo.png";
+            botAvatar.alt = "机器人头像";
+            botAvatar.classList.add("bot-avatar");
+
+            var botMessageElement = document.createElement("div");
+            botMessageElement.classList.add("bot-message");
+            botMessageElement.textContent = "处理中...";
+
+            botMessageContainer.appendChild(botAvatar);
+            botMessageContainer.appendChild(botMessageElement);
+            chatMessages.appendChild(botMessageContainer);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // 👇 新增：判断是否是打招呼
+            const greetingKeywords = ["你好", "您好", "hello", "hi"];
+            if (greetingKeywords.includes(userInput.trim().toLowerCase())) {
+                const botResponse = "你好👋！我是中医小助手，很高兴见到你，欢迎问我任何问题，不过我的强项是中医哟！";
+                botMessageElement.textContent = "";
+                let index = 0;
+                const typingSpeed = 50;
+                function typeWriter() {
+                    if (index < botResponse.length) {
+                        botMessageElement.textContent += botResponse.charAt(index);
+                        index++;
+                        setTimeout(typeWriter, typingSpeed);
+                    }
+                }
+                typeWriter();
+                return;
+            }
+
+            // 否则正常调用后端
+            try {
+                const response = await fetch("/ask", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ question: userInput })
+                });
+
+                const data = await response.json();
+                let botResponse = data.answer;
+
+                botMessageElement.textContent = "";
+                let index = 0;
+                const typingSpeed = 50;
+                function typeWriter() {
+                    if (index < botResponse.length) {
+                        botMessageElement.textContent += botResponse.charAt(index);
+                        index++;
+                        setTimeout(typeWriter, typingSpeed);
+                    }
+                }
+                typeWriter();
+            } catch (error) {
+                botMessageElement.textContent = "出错了：" + error.message;
+            }
+        }
+
+    
+        function newChat() {
+            var chatMessages = document.getElementById("chat-messages");
+            var chatHistoryDiv = document.getElementById("chat-history");
+    
+            var currentChat = chatMessages.innerHTML;
+            if (currentChat.trim() !== "") {
+                var historyItem = document.createElement("div");
+                historyItem.classList.add("history-item");
+                historyItem.textContent = "对话 " + chatCounter++;
+                historyItem.setAttribute("data-history", currentChat);
+                historyItem.onclick = function() {
+                    loadChat(this.getAttribute("data-history"));
+                };
+                chatHistoryDiv.appendChild(historyItem);
+            }
+    
+            chatMessages.innerHTML = '<div class="message-container bot-message-container"><img src="static/picture/logo.png" alt="机器人头像" class="bot-avatar"><div class="bot-message">欢迎来到中医智达！在询问中医问题时，不要忘记在询问前加“在中医中”四字。</div></div>';
+            document.getElementById("user-input").value = "";
+    
+            sessionId = Date.now().toString();
+            chatHistory = [];
+        }
+    
+        function loadChat(history) {
+            var chatMessages = document.getElementById("chat-messages");
+            chatMessages.innerHTML = history;
+        }
+    </script>
+    

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="import-container">
+    <h2>导入Excel数据</h2>
+ <!-- 添加下载示例文件的链接 -->
+    <div class="import-header">
+        <!-- 下载示例文件按钮 -->
+        <div class="download-example">
+            <a href="{{ url_for('download_example') }}" class="btn btn-secondary">
+                下载示例文件
+            </a>
+        </div>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" id="importForm"> <!-- 添加ID以便JavaScript访问 -->
+        <div class="form-group">
+            <label for="file">选择Excel文件(.xlsx)</label>
+            <input type="file" id="file" name="file" accept=".xlsx" required>
+        </div>
+        <button type="submit" class="btn">导入</button>
+    </form>
+
+    {% if data %}
+    <div class="data-preview">
+        <h3>数据预览</h3>
+        <table>
+            <thead>
+                <tr>
+                    {% for column in data[0].keys() %}
+                    <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    {% for value in row.values() %}
+                    <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    <!-- 消息容器放在表单外部（但仍在.import-container内部），或根据需要调整位置 -->
+    <div id="message-container" class="alert mt-3" style="display: none;"></div>
+</div>
+
+    <!-- 只需要在底部引入一次 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='js/import_data.js') }}"></script>
+{% endblock %}

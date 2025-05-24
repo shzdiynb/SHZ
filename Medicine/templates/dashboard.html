@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard">
+    <h1>欢迎回来，{{ session.get('username', '管理员') }}</h1>
+    <div class="stats">
+        <div class="stat-card">
+            <h3>待处理反馈</h3>
+            <p>{{ feedbacks|selectattr('status', 'equalto', 'pending')|list|length }}</p>
+        </div>
+        <div class="stat-card">
+            <h3>总用户数</h3>
+            <p>1,234</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

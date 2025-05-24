@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>    
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title -->
+  <title>中医药查询系统</title>
+
+  <!-- Favicon -->
+
+
+  <!-- Font-Awesome (CSS) -->
+  <link rel="stylesheet" href="static/css/all.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="static/css/main.css">
+  <link rel="stylesheet" href="static/css/responsive.css">
+  <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchForm = document.querySelector(".search-container");
+            const searchBar = document.getElementById("search-bar");
+
+            // 定义中文关键词到HTML文件的映射关系
+            const mapping =  {'一枝黄花': 'file1.html', '丁公藤': 'file2.html', '丁香': 'file3.html', '三七': 'file4.html',
+              '三棱': 'file5.html', '三白草': 'file6.html', '三颗针': 'file7.html', '丝瓜络': 'file8.html', '两面针': 'file9.html',
+              '丹参': 'file10.html', '乌梅': 'file11.html', '乌药': 'file12.html', '九里香': 'file13.html', '乳香': 'file14.html',
+              '五加皮': 'file15.html', '五味子': 'file16.html', '亚麻子': 'file17.html', '人参': 'file18.html', '人参叶': 'file19.html',
+              '仙茅': 'file20.html', '仙鹤草': 'file21.html', '伊贝母': 'file22.html', '何首乌': 'file23.html', '佛手': 'file24.html',
+              '佩兰': 'file25.html', '使君子': 'file26.html', '侧柏叶': 'file27.html', '偏头七': 'file28.html', '党参': 'file29.html',
+              '八角茴香': 'file30.html', '冬凌草': 'file31.html', '冬瓜皮': 'file32.html', '冰片': 'file33.html', '决明子': 'file34.html',
+              '刀豆': 'file35.html', '刺五加': 'file36.html', '前胡': 'file37.html', '化橘红': 'file38.html', '北刘寄奴': 'file39.html',
+              '北沙参': 'file40.html', '北豆根': 'file41.html', '千里光': 'file42.html', '千金子': 'file43.html', '升麻': 'file44.html',
+              '半夏': 'file45.html', '半枝莲': 'file46.html', '半边莲': 'file47.html', '南五味子': 'file48.html', '南鹤虱': 'file49.html',
+              '卷柏': 'file50.html', '厚朴': 'file51.html', '合欢皮': 'file52.html', '合欢花': 'file53.html', '吴茱萸': 'file54.html',
+              '商陆': 'file55.html', '四季青': 'file56.html', '土木香': 'file57.html', '土茯苓': 'file58.html', '土荆皮': 'file59.html',
+              '土贝母': 'file60.html', '地榆': 'file61.html', '地骨皮': 'file62.html', '地黄': 'file63.html', '垂盆草': 'file64.html',
+              '墨旱莲': 'file65.html', '夏天无': 'file66.html', '夏枯草': 'file67.html', '大叶紫珠': 'file68.html', '大枣': 'file69.html',
+              '大皂角': 'file70.html', '大蒜': 'file71.html', '大蓟': 'file72.html', '大血藤': 'file73.html', '大青叶': 'file74.html',
+              '大黄': 'file75.html', '天仙子': 'file76.html', '天仙藤': 'file77.html', '天冬': 'file78.html', '天南星': 'file79.html',
+              '天竺黄': 'file80.html', '天花粉': 'file81.html', '天麻': 'file82.html', '太子参': 'file83.html', '女贞子': 'file84.html',
+              '委陵菜': 'file85.html', '姜黄': 'file86.html', '威灵仙': 'file87.html', '娑罗子': 'file88.html', '安息香': 'file89.html',
+              '密蒙花': 'file90.html', '射干': 'file91.html', '小茴香': 'file92.html', '小蓟': 'file93.html', '山慈菇': 'file94.html',
+              '山柰': 'file95.html', '山楂': 'file96.html', '山茱萸': 'file97.html', '山药': 'file98.html', '山豆根': 'file99.html',
+              '岩白菜': 'file100.html', '川乌': 'file101.html', '川木通': 'file102.html', '川木香': 'file103.html', '川楝子': 'file104.html',
+              '川牛膝': 'file105.html', '川芎': 'file106.html', '川贝母': 'file107.html', '巴戟天': 'file108.html', '巴豆': 'file109.html',
+              '巴豆霜': 'file110.html', '常山': 'file111.html', '干姜': 'file112.html', '平贝母': 'file113.html', '广藿香': 'file114.html',
+              '广金钱草': 'file115.html', '延胡索': 'file116.html', '当归': 'file117.html', '当药': 'file118.html', '徐长卿': 'file119.html',
+              '忍冬藤': 'file120.html', '急性子': 'file121.html', '拳参': 'file122.html', '救必应': 'file123.html', '旋覆花': 'file124.html',
+              '昆布': 'file125.html', '明党参': 'file126.html', '月季花': 'file127.html', '木瓜': 'file128.html', '木蝴蝶': 'file129.html',
+              '木贼': 'file130.html', '木通': 'file131.html', '木香': 'file132.html', '木鳖子': 'file133.html', '朱砂根': 'file134.html',
+              '杜仲': 'file135.html', '杜仲叶': 'file136.html', '杠板归': 'file137.html', '板蓝根': 'file138.html', '枇杷叶': 'file139.html',
+              '枳壳': 'file140.html', '枳实': 'file141.html', '枸杞子': 'file142.html', '枸骨叶': 'file143.html', '柏子仁': 'file144.html',
+              '柴胡': 'file145.html', '柿蒂': 'file146.html', '栀子': 'file147.html', '桂枝': 'file148.html', '桃仁': 'file149.html',
+              '桃枝': 'file150.html', '桑叶': 'file151.html', '桑寄生': 'file152.html', '桑枝': 'file153.html', '桑白皮': 'file154.html',
+              '桔梗': 'file155.html', '棕榈': 'file156.html', '榼藤子': 'file157.html', '槐花': 'file158.html', '槐角': 'file159.html',
+              '槟榔': 'file160.html', '槲寄生': 'file161.html', '橘核': 'file162.html', '檀香': 'file163.html', '款冬花': 'file164.html',
+              '水飞蓟': 'file165.html', '沉香': 'file166.html', '没药': 'file167.html', '泽兰': 'file168.html', '泽泻': 'file169.html',
+              '洋金花': 'file170.html', '浙贝母': 'file171.html', '浮萍': 'file172.html', '海藻（羊栖菜）': 'file173.html',
+              '海金沙': 'file174.html', '海风藤': 'file175.html', '淡竹叶': 'file176.html', '淫羊藿': 'file177.html', '满山红': 'file178.html',
+              '漏芦': 'file179.html', '火麻仁': 'file180.html', '灯心草': 'file181.html', '灯盏细辛': 'file182.html', '灵芝': 'file183.html',
+              '焦栀子': 'file184.html', '牛膝': 'file185.html', '牛蒡子': 'file186.html', '牡丹皮': 'file187.html', '牡荆叶': 'file188.html',
+              '牵牛子': 'file189.html', '独一味': 'file190.html', '独活': 'file191.html', '狼毒': 'file192.html', '猪牙皂': 'file193.html',
+              '玄参': 'file194.html', '玉竹': 'file195.html', '王不留行': 'file196.html', '玫瑰花': 'file197.html', '珠子参': 'file198.html',
+              '瓜蒌': 'file199.html', '甘松': 'file200.html', '甘草': 'file201.html', '甘遂': 'file202.html', '生姜': 'file203.html',
+              '番泻叶': 'file204.html', '白前': 'file205.html', '白及': 'file206.html', '白头翁': 'file207.html', '白屈菜': 'file208.html',
+              '白扁豆': 'file209.html', '白术': 'file210.html', '白果': 'file211.html', '白芍': 'file212.html', '白芷': 'file213.html',
+              '白茅根': 'file214.html', '白蔹': 'file215.html', '白薇': 'file216.html', '白附子': 'file217.html', '白鲜皮': 'file218.html',
+              '百合': 'file219.html', '百部': 'file220.html', '皂角刺': 'file221.html', '益智': 'file222.html', '益母草': 'file223.html',
+              '知母': 'file224.html', '石吊兰': 'file225.html', '石斛': 'file226.html', '石榴皮': 'file227.html', '石菖蒲': 'file228.html',
+              '石韦': 'file229.html', '砂仁': 'file230.html', '秦艽': 'file231.html', '积雪草': 'file232.html', '穿山龙': 'file233.html',
+              '穿心莲': 'file234.html', '竹根七': 'file235.html', '竹茹': 'file236.html', '筋骨草': 'file237.html', '紫花地丁': 'file238.html',
+              '紫苏叶': 'file239.html', '紫苏子': 'file240.html', '紫苏梗': 'file241.html', '紫草': 'file242.html', '紫菀': 'file243.html',
+              '红参': 'file244.html', '红景天': 'file245.html', '红花': 'file246.html', '细辛': 'file247.html', '络石藤': 'file248.html',
+              '续断': 'file249.html', '绵萆薢': 'file250.html', '罂粟壳': 'file251.html', '罗布麻叶': 'file252.html', '罗汉果': 'file253.html',
+              '羌活': 'file254.html', '老鹳草': 'file255.html', '肉桂': 'file256.html', '肉苁蓉': 'file257.html', '肉豆蔻': 'file258.html',
+              '肿节风': 'file259.html', '胖大海': 'file260.html', '胡椒': 'file261.html', '胡芦巴': 'file262.html', '胡黄连': 'file263.html',
+              '艾叶': 'file264.html', '芡实': 'file265.html', '芥子': 'file266.html', '芦根': 'file267.html', '芦荟': 'file268.html',
+              '芫花': 'file269.html', '花椒': 'file270.html', '苍术': 'file271.html', '苍耳子': 'file272.html', '苏合香': 'file273.html',
+              '苏木': 'file274.html', '苦参': 'file275.html', '苦地丁': 'file276.html', '苦木': 'file277.html', '苦杏仁': 'file278.html',
+              '苦楝皮': 'file279.html', '苦玄参': 'file280.html', '茜草': 'file281.html', '茯苓': 'file282.html', '茵陈': 'file283.html',
+              '荆芥': 'file284.html', '草乌': 'file285.html', '草果': 'file286.html', '草豆蔻': 'file287.html', '荜澄茄': 'file288.html',
+              '荜茇': 'file289.html', '药王茶': 'file290.html', '荷叶': 'file291.html', '莪术': 'file292.html', '莱菔子': 'file293.html',
+              '莲子': 'file294.html', '莲子心': 'file295.html', '菊花': 'file296.html', '菊苣': 'file297.html', '菝葜': 'file298.html',
+              '菟丝子': 'file299.html', '菥蓂': 'file300.html', '萹蓄': 'file301.html', '葛根': 'file302.html', '葶苈子': 'file303.html',
+              '蒲公英': 'file304.html', '蒲黄': 'file305.html', '蒺藜': 'file306.html', '蓍草': 'file307.html', '蓖麻子': 'file308.html',
+              '蓼大青叶': 'file309.html', '蔓荆子': 'file310.html', '薄荷': 'file311.html', '薏苡仁': 'file312.html', '薤白': 'file313.html',
+              '藁本': 'file314.html', '藕节': 'file315.html', '虎杖': 'file316.html', '蛇床子': 'file317.html', '蜘蛛香': 'file318.html',
+              '血竭': 'file319.html', '补骨脂': 'file320.html', '西洋参': 'file321.html', '覆盆子': 'file322.html', '诃子': 'file323.html',
+              '谷精草': 'file324.html', '豆蔻': 'file325.html', '豨莶草': 'file326.html', '赤小豆': 'file327.html', '赤芍': 'file328.html',
+              '路路通': 'file329.html', '车前子': 'file330.html', '车前草': 'file331.html', '辛夷': 'file332.html', '辣椒': 'file333.html',
+              '远志': 'file334.html', '连翘': 'file335.html', '连钱草': 'file336.html', '追风七（蓝布正）': 'file337.html', '郁李仁': 'file338.html',
+              '郁金': 'file339.html', '酸枣仁': 'file340.html', '野木瓜': 'file341.html', '野菊花': 'file342.html', '金果榄': 'file343.html',
+              '金樱子': 'file344.html', '金沸草': 'file345.html', '金钱草': 'file346.html', '金铁锁': 'file347.html', '金银花': 'file348.html',
+              '钩藤': 'file349.html', '银柴胡': 'file350.html', '锁阳': 'file351.html', '闹羊花': 'file352.html', '防己': 'file353.html',
+              '防风': 'file354.html', '附子': 'file355.html', '陈皮': 'file356.html', '降香': 'file357.html', '雷公藤': 'file358.html',
+              '青叶胆': 'file359.html', '青果': 'file360.html', '青皮': 'file361.html', '青葙子': 'file362.html', '青蒿': 'file363.html',
+              '青风藤': 'file364.html', '韭菜子': 'file365.html', '预知子': 'file366.html', '颠茄草': 'file367.html', '香加皮': 'file368.html',
+              '香橼': 'file369.html', '香薷': 'file370.html', '香附': 'file371.html', '马兜铃': 'file372.html',
+              '马钱子': 'file373.html', '马鞭草': 'file374.html', '马齿苋': 'file375.html', '骨碎补': 'file376.html',
+              '高良姜': 'file377.html', '鱼腥草': 'file378.html', '鸡冠花': 'file379.html', '鸡血藤': 'file380.html',
+              '鸡骨草': 'file381.html', '鸦胆子': 'file382.html', '鸭跖草': 'file383.html', '鹅不食草': 'file384.html',
+              '鹿衔草': 'file385.html', '麦冬': 'file386.html', '麦芽': 'file387.html', '麻黄': 'file388.html', '麻黄根': 'file389.html',
+              '黄山药': 'file390.html', '黄柏': 'file391.html', '黄精': 'file392.html', '黄芩': 'file393.html', '黄芪': 'file394.html',
+              '黄蜀葵花': 'file395.html', '黄连': 'file396.html', '黑种草子': 'file397.html', '黑芝麻': 'file398.html', '黑豆': 'file399.html',
+              '龙眼肉': 'file400.html', '龙胆': 'file401.html', '龙葵': 'file402.html'}
+
+            // 搜索函数
+            function search(query) {
+                const fileName = mapping[query];
+                if (fileName) {
+                    // 跳转到对应的HTML文件
+                    window.location.href = fileName;
+                } else {
+                    alert('未找到匹配的文件。');
+                }
+            }
+
+            // 监听表单提交事件
+            searchForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const query = searchBar.value.trim();
+                search(query);
+            });
+        });
+    </script>
+</head>
+<body>
+
+  <!-- ==================== Scroll-Top Area (Start) ==================== -->
+  <a href="#" class="scroll-top">
+    <i class="fa-solid fa-arrow-up-long"></i>
+  </a>
+  <!-- ==================== Scroll-Top Area (End) ==================== -->
+
+
+
+  <!-- ==================== Header Area (Start) ==================== -->
+  <header class="header">
+
+    <!-- ===== Header-1 Area (Start) ===== -->
+    <div class="header-1">
+
+      <!-- == Contacts == -->
+      <ul class="header-contacts">
+        <li><i class="fas fa-phone"></i><span>18868776067</span></li>
+        <li><i class="fas fa-envelope"></i><span class="gmail">3432192572@qq.com</span></li>
+      </ul>
+
+      <!-- == Social == -->
+      <ul class="social-contacts">
+        <li><a href="#" class="fab fa-facebook-f"></a></li>
+        <li><a href="#" class="fa-brands fa-x-twitter"></a></li>
+        <li><a href="#" class="fab fa-instagram"></a></li>
+        <li><a href="#" class="fab fa-linkedin"></a></li>
+      </ul>
+
+    </div>
+    <!-- ===== Header-1 Area (End) ===== -->
+
+    <!-- ===== Header-2 Area (Start) ===== -->
+    <div class="header-2">
+
+      <!-- == Logo == -->
+      <a class="logo" href="index.html">
+        <img src="static/picture/logo.png" alt="logo">
+        <div class="logo-name">
+          <h3>Night</h3>
+        </div>
+      </a>
+
+      <div class="container">
+
+        <!-- == Navbar == -->
+        <nav class="navbar">
+
+          <div class="dropdown-menu">
+            <button class="nav-btn"><a class="nav-btn" href="index.html">首页</a></button>
+            <div class="dropdown-content">
+              <a href="Register.html">注册</a>
+              <a href="Login.html">登录</a>
+
+            </div>
+          </div>
+
+
+
+         <a class="nav-btn"  href="About.html">技术指南</a>
+
+          <div class="dropdown-menu">
+            <button class="nav-btn">中医宣传</button>
+            <div class="dropdown-content">
+              <a href="Gallery.html">中医大家</a>
+              <a href="Process.html">中药材</a>
+              <a href="Pricing.html">经方</a>
+
+              <a href="Partners.html">针灸</a>
+              <a href="Career.html">推拿</a>
+              <a href="Career-Single.html">把脉</a>
+
+            </div>
+          </div>
+
+          <div class="dropdown-menu">
+            <a class="nav-btn" href="Login.html">查询</a>
+          </div>
+
+
+
+
+          <a class="nav-btn" href="Contact.html">建议</a>
+
+        </nav>
+
+        <!-- == Icon Container == -->
+        <div class="icon-container">
+          <div id="search-btn" class="icon fa-solid fa-magnifying-glass"></div> <!-- Search Icon -->
+          <div id="menu-btn" class="icon fa-solid fa-bars-staggered"></div>
+          <a href="Request-Quote.html" class="btn">详细信息</a>
+        </div>
+
+        <!-- == Search Container == -->
+        <form class="search-container">
+          <input type="search" id="search-bar" placeholder="search here" required=""> <!-- Search Input -->
+          <button type="submit"><i class="fas fa-search"></i></button> <!-- Submit Button -->
+        </form>
+
+      </div>
+
+    </div>
+    <!-- ===== Header-2 Area (End) ===== -->
+
+    <!-- ===== Mobile Menu Area (Start) ===== -->
+    <div class="mobile-menu">
+
+      <nav class="mobile-navbar">
+
+        <div class="nav-link">
+          <div class="main-nav-link"> <a class="nav-btn" href="index.html">home</a> </div>
+        </div>
+
+        <div class="nav-link">
+          <div class="main-nav-link"> <div class="nav-btn">about</div> <i class="fas fa-plus"></i> </div>
+          <div class="sub-nav-link">
+            <a href="About.html">about us</a>
+            <a href="Team.html">team</a>
+            <a href="Team-Single.html">team single</a>
+            <a href="Testimonials.html">testimonials</a>
+            <a href="Faqs.html">faqs</a>
+          </div>
+        </div>
+
+        <div class="nav-link">
+          <div class="main-nav-link"> <div class="nav-btn">pages</div> <i class="fas fa-plus"></i> </div>
+          <div class="sub-nav-link">
+            <a href="Gallery.html">Gallery</a>
+            <a href="Process.html">our process</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="Request-Quote.html">Request A Quote</a>
+            <a href="Partners.html">Partners</a>
+            <a href="">Career</a>
+            <a href="Career-Single.html">Career Single</a>
+            <a href="Login.html">login</a>
+            <a href="Register.html">register</a>
+            <a href="Reset-Password.html">forgot Password</a>
+          </div>
+        </div>
+
+        <div class="nav-link">
+          <div class="main-nav-link"> <div class="nav-btn">Service</div> <i class="fas fa-plus"></i> </div>
+          <div class="sub-nav-link">
+            <a href="Services.html">Services</a>
+            <a href="Service-Single.html">Service Single</a>
+          </div>
+        </div>
+
+        <div class="nav-link">
+          <div class="main-nav-link"> <div class="nav-btn">Project</div> <i class="fas fa-plus"></i> </div>
+          <div class="sub-nav-link">
+            <a href="Projects.html">Projects</a>
+            <a href="Project-Single.html">Project Single</a>
+          </div>
+        </div>
+
+        <div class="nav-link">
+          <div class="main-nav-link"> <div class="nav-btn">blog</div> <i class="fas fa-plus"></i> </div>
+          <div class="sub-nav-link">
+            <a href="Blog-Grid.html">blogs grid</a>
+            <a href="Blog-List.html">blogs list</a>
+            <a href="Blog-Single.html">blog Single</a>
+          </div>
+        </div>
+
+        <div class="nav-link">
+          <div class="main-nav-link"> <div class="nav-btn">Shop</div> <i class="fas fa-plus"></i> </div>
+          <div class="sub-nav-link">
+            <a href="Shop-Grid.html">shop grid</a>
+            <a href="Shop-List.html">shop list</a>
+            <a href="Product-Single.html">product Single</a>
+            <a href="Wishlist.html">wishlist</a>
+            <a href="Cart.html">cart</a>
+            <a href="Checkout.html">checkout</a>
+          </div>
+        </div>
+
+        <div class="nav-link">
+          <div class="main-nav-link"> <a class="nav-btn" href="Contact.html">contact</a> </div>
+        </div>
+
+      </nav>
+
+    </div>
+    <!-- ===== Mobile Menu Area (End) ===== -->
+
+  </header>
+  <!-- ==================== Header Area (End) ==================== -->
+
+
+
+  <!-- ==================== Page-Title (Start) ==================== -->
+  <div class="page-title">
+
+    <div class="title">
+      <h2>针灸</h2>
+    </div>
+
+    <div class="link">
+      <a href="index.html">首页</a>
+      <i class="fas fa-slash"></i>
+      <span class="page">针灸</span>
+    </div>
+
+  </div>
+  <!-- ==================== Page-Title (End) ==================== -->
+
+
+
+  <!-- ==================== Page Body (Start) ======================== -->
+
+  <!-- ==================== Career Area (Start) ==================== -->
+  <section class="career">
+
+    <!-- ========== Career Page Introduction (Start) ========== -->
+    <section class="about">
+
+      <div class="box-container">
+
+        <!-- Introduction Content -->
+        <div class="content">
+
+          <div class="heading">
+            <div class="sub"><span>针  灸</span></div> <!-- Sub Heading -->
+            <h2>中医针灸之原理</h2> <!-- Main Heading -->
+          </div>
+
+          <!-- Description -->
+          <p>&nbsp;&nbsp;&nbsp;一般所说的针灸，是指针法中医针灸其实是针法和灸法的合称。针法是用金属制成的针，刺人人体一定的穴位，
+            运用适当的手法，以疏经活络，调节气血，调理脏腑，调和阴阳来治疗疾病。而灸法是艾绒或其他药物放置在体表的穴位部位上烧灼、
+            温熨，借灸火的温和热力以及药物的作用，通过经络的传导，温通气血，散寒止痛，从而达到防治疾病和康复保健的作用。</p>
+
+          <!-- Key Features -->
+          <ul class="about-features">
+            <!-- Point 1: Architecture -->
+            <li>
+              <div class="text">
+                <i class="fas fa-pencil-ruler"></i> <!-- Pencil Ruler Icon -->
+                <p>调理阴阳，补偏救弊，恢复阴阳相对平衡，促进阴平阳秘，保持精气充沛，形气相合，神气内存。</p><!-- Feature 1 -->
+              </div>
+            </li>
+            <li>
+              <div class="text">
+                <i class="fas fa-drafting-compass"></i> <!-- Drafting Compass Icon -->
+                <p>针刺疗法和艾灸都有扶助正气，祛除邪气，增强免疫的作用，而针刺疗法和放血有祛邪的作用。</p><!-- Feature 2 -->
+              </div>
+            </li>
+            <li>
+              <div class="text">
+                <i class="fas fa-building"></i> <!-- Buiding Icon -->
+                <p>对穴位选行针刺和艾灸，"通其经脉，调其气血";，从而能活血化瘀、生新止痛。</p><!-- Feature 3 -->
+              </div>
+            </li>
+            <li>
+              <div class="text">
+                <i class="fas fa-project-diagram"></i> <!-- Project Diagram Icon -->
+                <p>针灸具有修复组织的作用。</p><!-- Feature 4 -->
+              </div>
+            </li>
+<!--            <li>-->
+<!--              <div class="text">-->
+<!--                <i class="fas fa-lightbulb"></i> &lt;!&ndash; Lightbulb Icon &ndash;&gt;-->
+<!--                <p>Innovate with Sustainable Design Solutions</p>&lt;!&ndash; Feature 5 &ndash;&gt;-->
+<!--              </div>-->
+<!--            </li>-->
+          </ul>
+
+        </div>
+
+        <!-- Career Image -->
+        <div class="image">
+          <img src="static/picture/y2.png" alt="Career-Image">
+        </div>
+
+      </div>
+
+    </section>
+    <!-- ========== Career Page Introduction (End) ========== -->
+
+    <!-- ========== Career Benefits for Employees (Start) ========== -->
+    <div class="career-benefits">
+
+      <!-- Competitive Compensation -->
+      <div class="benefit-item">
+        <i class="fas fa-money-bill-alt"></i> <!-- Money Icon -->
+        <div class="content">
+          <h3> 中医针灸之起源</h3> <!-- Benefit Title -->
+          <p>&nbsp;&nbsp;&nbsp;针灸疗法最早见于战国时代问世的《黄帝内经》一书。"砭而刺之"渐发展为针法，"热而熨之"渐发展为灸法，这就是针灸疗法的前身。起源于远古、形成于秦汉、
+            发展于晋唐宋、成熟于明代而衰落于清季的针灸法，一直是中国历代常用的治疗各种疾病的手法之一。一直在中国流行，现在已经传播到了世界各地。</p>
+        </div>
+      </div>
+
+      <!-- Training and Development -->
+      <div class="benefit-item">
+        <i class="fas fa-chalkboard-teacher"></i> <!-- Instructor Icon -->
+        <div class="content">
+          <h3> 针灸治病</h3> <!-- Benefit Title -->
+          <p>&nbsp;&nbsp;&nbsp;针灸治病，用的是一根根经过严格消毒过的不锈钢针，其治病原则与内服药物一样，虚证用补，实证用泻。
+            因为针灸具有双向良性调节作用。其当机体处于虚惫状态而呈虚证时，针刺后可以通过经络激发脏腑功能，促进气血生成，增强机体功能，
+            起到扶正补虚的作用；当机体处于邪气旺盛而呈实证时，
+            针刺后能够疏通经络，行气活血，疏利脏腑， 抑制机体功能，起到祛邪泻实的作用。其补与泻，是根据针刺时机体所处的功能状态来决定的。</p>
+        </div>
+      </div>
+
+      <!-- Project Diversity -->
+      <div class="benefit-item">
+        <i class="fas fa-project-diagram"></i> <!-- Project Icon -->
+        <div class="content">
+          <h3>穴位主治</h3> <!-- Benefit Title -->
+          <p>&nbsp;&nbsp;&nbsp;穴位的主治作用，不仅具有普遍性，而且还具有相对的特异性，有些穴位性质偏补，有些穴位性质偏泻，比如神阙、关元、气海、膏盲、足三里等穴，
+            针刺或艾灸后，大多能鼓舞人体正气， 促进功能旺盛，具有强壮作用，多用于虚损病证；而井穴、十宣、八邪、人中、委中等穴，
+            又能疏泄病邪抑制人体功能亢进，具有祛邪作用，临床上多用于邪实病证。</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- ========== Career Benefits for Employees (End) ========== -->
+
+    <!-- ========== Career Positions (Start) ========== -->
+    <div class="career-positions">
+
+      <!-- Section Heading -->
+      <div class="heading">
+        <div class="sub">
+          <span>人体重要穴位</span>
+        </div>
+        <h2>详   解</h2>
+      </div>
+
+      <div class="box-container">
+
+        <!-- Position 1: Interior Designer -->
+        <div class="position-item">
+          <div class="left">
+            <a href="Career-Single.html">
+              <h3>百会穴</h3>
+            </a>
+            <!-- Position Details -->
+            <div class="details">
+              <h5><i class="fas fa-map-marker-alt"></i><span>背部,后发际正中上7寸,当两耳尖直上,头顶正中</span></h5>
+              <p class="tag">主治:头痛,目眩,鼻塞,耳鸣,中风,失语,脱肛,久泻久痢等</p>
+            </div>
+          </div>
+          <div class="left">
+            <!-- Position Salary -->
+            <h5><i class="fas fa-money-bill"></i><span></span></h5>
+            <a href="https://www.sohu.com/a/199047542_99958850" class="btn">了解更多</a>
+          </div>
+        </div>
+
+        <!-- Position 2: Architectural Designer -->
+        <div class="position-item">
+          <div class="right">
+            <a href="Career-Single.html">
+              <h3>肩井穴</h3>
+            </a>
+            <!-- Position Details -->
+            <div class="details">
+              <h5><i class="fas fa-map-marker-alt"></i><span> 位于大椎与肩峰端连线的中点上，前直对乳中</span></h5>
+              <p class="tag">主治：肩背痹痛、上肢不遂、颈项强痛等肩颈上肢部病症</p>
+            </div>
+          </div>
+          <div class="left">
+            <!-- Position Salary -->
+            <h5><i class="fas fa-money-bill"></i><span> </span></h5>
+            <a href="https://www.zhzyw.com/zt/xwdq/" class="btn">了解更多</a>
+          </div>
+        </div>
+
+        <!-- Position 3: Project Manager -->
+        <div class="position-item">
+          <div class="right">
+            <a href="Career-Single.html">
+              <h3>大椎穴</h3>
+            </a>
+            <!-- Position Details -->
+            <div class="details">
+              <h5><i class="fas fa-map-marker-alt"></i><span>位于第七颈椎棘突下凹陷中</span></h5>
+              <p class="tag">主治:热病,痢疾,咳嗽,肩背痛,腰脊强,中暑,呕吐,风疹等</p>
+            </div>
+          </div>
+          <div class="left">
+            <!-- Position Salary -->
+            <h5><i class="fas fa-money-bill"></i><span></span></h5>
+            <a href="https://wenku.baidu.com/view/9beca3f3ff0a79563c1ec5da50e2524de518d026.html?_wkts_=1720760378671" class="btn">了解更多</a>
+          </div>
+        </div>
+
+        <!-- Position 4: CAD Technician -->
+        <div class="position-item">
+          <div class="right">
+            <a href="Career-Single.html">
+              <h3>风门穴</h3>
+            </a>
+            <!-- Position Details -->
+            <div class="details">
+              <h5><i class="fas fa-map-marker-alt"></i><span>位于背部，当第2胸椎棘突下，旁开1.5寸处。</span></h5>
+              <p class="tag">主治:感冒,伤风,咳嗽,发热头痛,颈椎病,胸背痛,肩膀酸痛等</p>
+            </div>
+          </div>
+          <div class="left">
+            <!-- Position Salary -->
+            <h5><i class="fas fa-money-bill"></i><span></span></h5>
+            <a href="https://www.jingfangpai.cn/p/10001260/" class="btn">了解更多</a>
+          </div>
+        </div>
+
+        <!-- Position 5: Design Consultant -->
+        <div class="position-item">
+          <div class="right">
+            <a href="Career-Single.html">
+              <h3>内关穴</h3>
+            </a>
+            <!-- Position Details -->
+            <div class="details">
+              <h5><i class="fas fa-map-marker-alt"></i><span>位于前臂掌侧，当曲泽与大陵的连线上，腕横纹上2寸，掌长肌腱与桡侧腕屈肌腱之间</span></h5>
+              <p class="tag">主治:心痛,心悸,胸闷,胸痛,胃痛,呕吐,失眠,癫痫,上肢痹痛,偏瘫,手指麻木等</p>
+            </div>
+          </div>
+          <div class="left">
+            <!-- Position Salary -->
+            <h5><i class="fas fa-money-bill"></i><span></span></h5>
+            <a href="https://zhongyibaike.com/wiki/%E9%92%88%E7%81%B8" class="btn">了解更多</a>
+          </div>
+        </div>
+
+        <!-- Position 6: BIM Coordinator -->
+        <div class="position-item">
+          <div class="right">
+            <a href="Career-Single.html">
+              <h3>太冲穴</h3>
+            </a>
+            <!-- Position Details -->
+            <div class="details">
+              <h5><i class="fas fa-map-marker-alt"></i><span>位于足背侧，第一、二跖骨结合部之前凹陷处</span></h5>
+              <p class="tag">主治:头痛,眩晕,月经不调,遗尿,胁痛,腹胀,咽痛嗌干,目赤肿痛,下肢痿痹等</p>
+            </div>
+          </div>
+          <div class="left">
+            <!-- Position Salary -->
+            <h5><i class="fas fa-money-bill"></i><span></span></h5>
+            <a href="http://zhongyibaodian.com/zs/35132.html#:~:text=%E9%92%88%E2%80%9D%E6%98%AF%E4%BB%A5%E9%92%88%E5%88%BA%E5%85%A5%E4%BA%BA%E4%BD%93%E7%A9%B4%E4%BD%8D%EF%BC%8C%E9%80%9A%E8%BF%87%E8%A1%A5%E3%80%81%E6%B3%BB%E7%AD%89%E6%89%8B%E6%B3%95%E7%9A%84%E8%BF%90%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%96%E5%BE%97%E4%BA%BA%E4%BD%93%E6%9C%AC%E8%BA%AB%E7%9A%84%E8%B0%83%E8%8A%82%E5%8F%8D%E5%BA%94%EF%BC%9B%E2%80%9C%E7%81%B8%E2%80%9D%E6%98%AF%E4%BB%A5%E8%89%BE%E7%82%B7%E7%83%A7%E7%81%BC%E7%A9%B4%E4%BD%8D%EF%BC%8C%E5%B0%86%E7%83%AD%E5%8A%9B%E9%80%8F%E5%85%A5%E8%82%8C%E8%82%A4%EF%BC%8C%E4%BB%A5%E6%B8%A9%E9%80%9A%E6%B0%94%E8%A1%80%E3%80%82,%E9%92%88%E7%81%B8%E7%9A%84%E5%8E%9F%E7%90%86%E5%BA%94%E5%BD%93%E6%98%AF%EF%BC%9A%E4%BB%A5%E5%88%BA%E6%BF%80%E4%BD%93%E8%A1%A8%E7%A9%B4%E4%BD%8D%E7%9A%84%E5%8A%9E%E6%B3%95%EF%BC%8C%E9%80%9A%E8%BF%87%E5%85%A8%E8%BA%AB%E7%BB%8F%E7%BB%9C%E4%BC%A0%E5%AF%BC%EF%BC%8C%E8%B0%83%E6%95%B4%E6%B0%94%E8%A1%80%E5%92%8C%E8%84%8F%E8%85%91%E5%8A%9F%E8%83%BD%EF%BC%8C%E4%BB%8E%E8%80%8C%E8%BE%BE%E5%88%B0%E9%98%B2%E7%97%85%E6%B2%BB%E7%97%85%E7%9A%84%E7%9B%AE%E7%9A%84%E3%80%82" class="btn">了解更多</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- ========== Career Positions (End) ========== -->
+
+  </section>
+  <!-- ==================== Career Area (End) ==================== -->
+
+  <!-- ==================== Page Body (End) ======================== -->
+    
+     
+
+  <!-- ==================== Footer Area (Start) ==================== -->
+  <footer class="footer">
+
+    <div class="box-container">
+  
+      <!-- == Company Information & Social Media Links == -->
+      <div class="footer-item">
+  
+        <!-- Company Logo -->
+        <a class="logo" href="index.html">
+          <img src="static/picture/logo.png" alt="Company Logo">
+          <div class="logo-name">
+            <h3>Night</h3>
+          </div>
+        </a>
+
+        <!-- Company Description -->
+        <p>带您了解古代中医大家的风采</p>
+
+        <!-- Contact Info -->
+        <div class="info connect">
+          <p><i class="fas fa-phone"></i><span>18868776067</span></p>
+          <p><i class="fas fa-envelope"></i><span class="gmail">3432192572@qq.com</span></p>
+          <p><i class="fas fa-map-marker-alt"></i><span>中医药大学</span></p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+      </div>
+
+      <!-- == Quick Links == -->
+      <div class="footer-item">
+        <h2>快速了解</h2>
+        <div class="info links">
+          <p><i class="fa-solid fa-caret-right"></i><a href="https://zhongyibaike.com/wiki/%E5%B1%B1%E8%8D%AF">山药</a></p>
+          <p><i class="fa-solid fa-caret-right"></i><a href="https://zhongyibaike.com/wiki/%E8%89%BE%E5%8F%B6">艾叶</a></p>
+          <p><i class="fa-solid fa-caret-right"></i><a href="https://zhongyibaike.com/wiki/%E9%B1%BC%E8%85%A5%E8%8D%89">鱼腥草</a></p>
+          <p><i class="fa-solid fa-caret-right"></i><a href="https://zhongyibaike.com/wiki/%E6%A7%9F%E6%A6%94">槟榔</a></p>
+          <p><i class="fa-solid fa-caret-right"></i><a href="https://zhongyibaike.com/wiki/%E5%BD%93%E5%BD%92">当归</a></p>
+          <p><i class="fa-solid fa-caret-right"></i><a href="https://zhongyibaike.com/wiki/%E4%BA%BA%E5%8F%82">人参</a></p>
+        </div>
+      </div>
+
+      <!-- == Services Links == -->
+      <div class="footer-item">
+        <h2>我们的服务</h2>
+        <div class="info links">
+          <p><i class="fa-solid fa-caret-right"></i><a href="Gallery.html">中医大家</a></p>
+          <p><i class="fa-solid fa-caret-right"></i><a href="Process.html">中药材</a></p>
+          <p><i class="fa-solid fa-caret-right"></i><a href="Pricing.html">经方</a></p>
+
+          <p><i class="fa-solid fa-caret-right"></i><a href="Career.html">推拿 </a></p>
+          <p><i class="fa-solid fa-caret-right"></i><a href="Career-Single.html"> 把脉</a></p>
+        </div>
+      </div>
+
+      <!-- == Newsletter Subscription == -->
+      <div class="footer-item">
+
+        <h2>通讯</h2>
+        <p>了解更多平台的内容，实时跟进平台的更新</p> <!-- Newsletter Description -->
+
+        <form class="dark-form">
+          <div class="input-field">
+            <label for="news-email" class="fas fa-envelope"></label>
+            <input type="email" id="news-email" name="email" class="box" placeholder="您的邮箱" required=""> <!-- Email Input Field -->
+          </div>
+          <button type="submit" class="btn">订阅</button> <!-- Subscribe Button -->
+        </form>
+
+      </div>
+
+    </div>
+
+    <!-- == Designer's Name and Copyright == -->
+    <div class="content">
+      <p>Copyright & Night</p>
+    </div>
+
+  </footer>
+  <!-- ==================== Footer Area (End) ==================== -->
+
+
+    
+  <!-- Jquery -->
+  <script src="static/js/jquery.min.js"></script>
+
+  <!-- Custom Script Files -->
+  <script src="static/js/script.js"></script> <!-- Custom JavaScript file with additional website functionality. -->
+  <script src="static/js/nav-link-toggler.js"></script> <!-- Manages navigation link toggling (e.g., hamburger menu) for mobile devices -->
+
+</body>
+</html>  
